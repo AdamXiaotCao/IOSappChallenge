@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  SplitBill
+//  Split
 //
 //  Created by Xiaotian Cao on 9/26/14.
 //  Copyright (c) 2014 Xiaotian Cao. All rights reserved.
@@ -15,8 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        Parse.setApplicationId("0ce62fi6BNrwNN33P2qa7B20XWd8ZuzBEO2rgbIL", clientKey: "GrktKQvemviQcKTqy4zzDVsTq5gMqouJBhsu6Dt1")
+        Parse.setApplicationId(<#applicationId: String!#>, clientKey: <#String!#>)
         return true
     }
 

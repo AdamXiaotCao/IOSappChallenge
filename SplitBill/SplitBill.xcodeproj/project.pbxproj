@@ -13,9 +13,8 @@
 		58A51FB719D6226C0064E184 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58A51FB619D6226C0064E184 /* Images.xcassets */; };
 		58A51FBA19D6226C0064E184 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A51FB819D6226C0064E184 /* LaunchScreen.xib */; };
 		58A51FC619D6226C0064E184 /* SplitBillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A51FC519D6226C0064E184 /* SplitBillTests.swift */; };
-		58B30DED19D6671A008E4DB3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B30DEA19D6671A008E4DB3 /* Bolts.framework */; };
-		58B30DEE19D6671A008E4DB3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B30DEB19D6671A008E4DB3 /* Parse.framework */; };
-		58B30DEF19D6671A008E4DB3 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B30DEC19D6671A008E4DB3 /* ParseFacebookUtils.framework */; };
+		58FD41D319D66AB400BFBE35 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FD41D219D66AB400BFBE35 /* Bolts.framework */; };
+		58FD41D419D66AB400BFBE35 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FD41D219D66AB400BFBE35 /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +38,8 @@
 		58A51FBF19D6226C0064E184 /* SplitBillTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitBillTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58A51FC419D6226C0064E184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58A51FC519D6226C0064E184 /* SplitBillTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitBillTests.swift; sourceTree = "<group>"; };
-		58B30DEA19D6671A008E4DB3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		58B30DEB19D6671A008E4DB3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		58B30DEC19D6671A008E4DB3 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		58B30DF019D668C2008E4DB3 /* SplitBill-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SplitBill-Bridging-Header.h"; sourceTree = "<group>"; };
+		58FD41D219D66AB400BFBE35 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		58FD41D519D66B0300BFBE35 /* SplitBillTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SplitBillTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,9 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58B30DEE19D6671A008E4DB3 /* Parse.framework in Frameworks */,
-				58B30DED19D6671A008E4DB3 /* Bolts.framework in Frameworks */,
-				58B30DEF19D6671A008E4DB3 /* ParseFacebookUtils.framework in Frameworks */,
+				58FD41D319D66AB400BFBE35 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58FD41D419D66AB400BFBE35 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +65,7 @@
 		58A51FA119D6226C0064E184 = {
 			isa = PBXGroup;
 			children = (
-				58B30DE919D6671A008E4DB3 /* parse-library-1.4.1 */,
+				58FD41D119D66AB400BFBE35 /* parse-library-1.4.1 */,
 				58A51FAC19D6226C0064E184 /* SplitBill */,
 				58A51FC219D6226C0064E184 /* SplitBillTests */,
 				58A51FAB19D6226C0064E184 /* Products */,
@@ -94,7 +90,7 @@
 				58A51FB619D6226C0064E184 /* Images.xcassets */,
 				58A51FB819D6226C0064E184 /* LaunchScreen.xib */,
 				58A51FAD19D6226C0064E184 /* Supporting Files */,
-				58B30DF019D668C2008E4DB3 /* SplitBill-Bridging-Header.h */,
+				58FD41D519D66B0300BFBE35 /* SplitBillTests-Bridging-Header.h */,
 			);
 			path = SplitBill;
 			sourceTree = "<group>";
@@ -124,12 +120,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		58B30DE919D6671A008E4DB3 /* parse-library-1.4.1 */ = {
+		58FD41D119D66AB400BFBE35 /* parse-library-1.4.1 */ = {
 			isa = PBXGroup;
 			children = (
-				58B30DEA19D6671A008E4DB3 /* Bolts.framework */,
-				58B30DEB19D6671A008E4DB3 /* Parse.framework */,
-				58B30DEC19D6671A008E4DB3 /* ParseFacebookUtils.framework */,
+				58FD41D219D66AB400BFBE35 /* Bolts.framework */,
 			);
 			path = "parse-library-1.4.1";
 			sourceTree = "<group>";
@@ -391,9 +385,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1.4.1",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -402,6 +398,8 @@
 				INFOPLIST_FILE = SplitBillTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SplitBill/SplitBillTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SplitBill.app/SplitBill";
 			};
 			name = Debug;
@@ -410,13 +408,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1.4.1",
 				);
 				INFOPLIST_FILE = SplitBillTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SplitBill/SplitBillTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SplitBill.app/SplitBill";
 			};
 			name = Release;
