@@ -10,13 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let threadLock = NSLock();
+    
     @IBOutlet var errorMessage: UILabel!
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var emailField: UITextField!
+    @IBOutlet var registerButton: UIButton!
     
     @IBAction func onUsernameModified(sender: AnyObject) {
-        var query = PFQuery(className:"User")
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            self.threadLock.lock();
+            var query = PFUser.query();
+            query.whereKey("username", equalTo: self.usernameField.text);
+            var users = query.findObjects();
+            dispatch_sync(dispatch_get_main_queue(), {
+                if (!users.isEmpty) {
+                    self.errorMessage.text = "taken";
+                    self.errorMessage.sizeToFit();
+                    self.registerButton.enabled = false;
+                } else if (!self.registerButton.enabled) {
+                    self.errorMessage.text = "message";
+                    self.errorMessage.sizeToFit();
+                    self.registerButton.enabled = true;
+                }
+            });
+            self.threadLock.unlock()
+        })
     }
     
     @IBAction func onRegister(sender: UIButton) {
@@ -29,7 +49,8 @@ class ViewController: UIViewController {
             if error == nil {
                 // Hooray! Let them use the app now.
             } else {
-                self.errorMessage.text = "Error";
+                self.errorMessage.text = error.userInfo!["error"]! as? String;
+                self.errorMessage.sizeToFit();
             }
         }
     }
