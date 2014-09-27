@@ -40,6 +40,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onRegister(sender: UIButton) {
+        if (self.usernameField.text == nil) {
+            self.errorMessage.text = "username is required";
+            return;
+        } else if (self.passwordField.text == nil) {
+            self.errorMessage.text = "password is required";
+            return;
+        } else if (self.emailField.text == nil) {
+            self.errorMessage.text = "email is required";
+            return;
+        }
         var newUser = PFUser();
         newUser.username = self.usernameField.text;
         newUser.password = self.passwordField.text;
@@ -54,6 +64,27 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    func getEvents() {
+        var user = PFUser.currentUser();
+        if (user == nil) {
+            // handle non-authenticated user
+            return;
+        }
+        
+    }
+    
+    @IBAction func onLogin(sender: UIButton) {
+        PFUser.logInWithUsernameInBackground(self.usernameField.text, password: self.passwordField.text) {
+            (user: PFUser!, error: NSError!) -> Void in
+            if user != nil {
+                // Do stuff after successful login.
+            } else {
+                self.errorMessage.text = error.userInfo!["error"]! as? String;
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
