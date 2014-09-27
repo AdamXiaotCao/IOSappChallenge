@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		587B23D719D66FFC00E1F198 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B23D619D66FFC00E1F198 /* CoreData.framework */; };
 		58FD41E819D66B5100BFBE35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD41E719D66B5100BFBE35 /* AppDelegate.swift */; };
 		58FD41EA19D66B5100BFBE35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD41E919D66B5100BFBE35 /* ViewController.swift */; };
 		58FD41ED19D66B5100BFBE35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58FD41EB19D66B5100BFBE35 /* Main.storyboard */; };
@@ -19,6 +20,8 @@
 		58FD421219D66BB900BFBE35 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FD420D19D66BB900BFBE35 /* Parse.framework */; };
 		58FD421319D66BB900BFBE35 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FD420E19D66BB900BFBE35 /* ParseFacebookUtils.framework */; };
 		58FD421419D66BB900BFBE35 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FD420E19D66BB900BFBE35 /* ParseFacebookUtils.framework */; };
+		58FD421B19D66CCA00BFBE35 /* SideBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD421A19D66CCA00BFBE35 /* SideBarTableViewController.swift */; };
+		58FD421C19D66CCA00BFBE35 /* SideBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD421A19D66CCA00BFBE35 /* SideBarTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		587B23D619D66FFC00E1F198 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		58FD41E219D66B5100BFBE35 /* Split.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Split.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FD41E619D66B5100BFBE35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58FD41E719D66B5100BFBE35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 		58FD420E19D66BB900BFBE35 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		58FD421519D66BD600BFBE35 /* Split-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Split-Bridging-Header.h"; sourceTree = "<group>"; };
 		58FD421619D66BD600BFBE35 /* SplitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SplitTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		58FD421A19D66CCA00BFBE35 /* SideBarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				587B23D719D66FFC00E1F198 /* CoreData.framework in Frameworks */,
 				58FD421119D66BB900BFBE35 /* Parse.framework in Frameworks */,
 				58FD420F19D66BB900BFBE35 /* Bolts.framework in Frameworks */,
 				58FD421319D66BB900BFBE35 /* ParseFacebookUtils.framework in Frameworks */,
@@ -76,6 +82,7 @@
 		58FD41D919D66B5100BFBE35 = {
 			isa = PBXGroup;
 			children = (
+				587B23D619D66FFC00E1F198 /* CoreData.framework */,
 				58FD420B19D66BB900BFBE35 /* parse-library-1.4.1 */,
 				58FD41E419D66B5100BFBE35 /* Split */,
 				58FD41FA19D66B5100BFBE35 /* SplitTests */,
@@ -98,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				58FD41E719D66B5100BFBE35 /* AppDelegate.swift */,
+				58FD421A19D66CCA00BFBE35 /* SideBarTableViewController.swift */,
 				58FD41E919D66B5100BFBE35 /* ViewController.swift */,
 				58FD41EB19D66B5100BFBE35 /* Main.storyboard */,
 				58FD41EE19D66B5100BFBE35 /* Images.xcassets */,
@@ -243,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58FD41EA19D66B5100BFBE35 /* ViewController.swift in Sources */,
+				58FD421B19D66CCA00BFBE35 /* SideBarTableViewController.swift in Sources */,
 				58FD41E819D66B5100BFBE35 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58FD421C19D66CCA00BFBE35 /* SideBarTableViewController.swift in Sources */,
 				58FD41FE19D66B5100BFBE35 /* SplitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,10 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/parse-library-1.4.1",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Split/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -384,10 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/parse-library-1.4.1",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Split/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -455,6 +459,7 @@
 				58FD420319D66B5100BFBE35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58FD420419D66B5100BFBE35 /* Build configuration list for PBXNativeTarget "SplitTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +468,7 @@
 				58FD420619D66B5100BFBE35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
