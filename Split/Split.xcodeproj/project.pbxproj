@@ -18,6 +18,7 @@
 		587B23E719D671BE00E1F198 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B23E619D671BD00E1F198 /* Security.framework */; };
 		587B23E919D671C500E1F198 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B23E819D671C500E1F198 /* StoreKit.framework */; };
 		587B23EB19D671CE00E1F198 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B23EA19D671CE00E1F198 /* SystemConfiguration.framework */; };
+		587B23ED19D67D5200E1F198 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B23EC19D67D5200E1F198 /* SideBar.swift */; };
 		58FD41E819D66B5100BFBE35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD41E719D66B5100BFBE35 /* AppDelegate.swift */; };
 		58FD41EA19D66B5100BFBE35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD41E919D66B5100BFBE35 /* ViewController.swift */; };
 		58FD41ED19D66B5100BFBE35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58FD41EB19D66B5100BFBE35 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		587B23E619D671BD00E1F198 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		587B23E819D671C500E1F198 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		587B23EA19D671CE00E1F198 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		587B23EC19D67D5200E1F198 /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
 		58FD41E219D66B5100BFBE35 /* Split.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Split.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FD41E619D66B5100BFBE35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58FD41E719D66B5100BFBE35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				58FD41E719D66B5100BFBE35 /* AppDelegate.swift */,
 				58FD421A19D66CCA00BFBE35 /* SideBarTableViewController.swift */,
+				587B23EC19D67D5200E1F198 /* SideBar.swift */,
 				58FD41E919D66B5100BFBE35 /* ViewController.swift */,
 				58FD41EB19D66B5100BFBE35 /* Main.storyboard */,
 				58FD41EE19D66B5100BFBE35 /* Images.xcassets */,
@@ -292,6 +295,7 @@
 			files = (
 				58FD41EA19D66B5100BFBE35 /* ViewController.swift in Sources */,
 				58FD421B19D66CCA00BFBE35 /* SideBarTableViewController.swift in Sources */,
+				587B23ED19D67D5200E1F198 /* SideBar.swift in Sources */,
 				58FD41E819D66B5100BFBE35 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
