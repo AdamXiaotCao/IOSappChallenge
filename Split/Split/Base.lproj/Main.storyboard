@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hgz-Fl-k2F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hgz-Fl-k2F">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -201,6 +201,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="All Events" id="VgV-kC-4PO">
+                        <barButtonItem key="leftBarButtonItem" title="Sync" id="L6q-Zq-pI6">
+                            <connections>
+                                <action selector="onSync:" destination="9jc-wb-QcE" id="XQ6-jn-H4D"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Q0u-8O-Q1U"/>
                     </navigationItem>
                 </tableViewController>
