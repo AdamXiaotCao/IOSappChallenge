@@ -45,26 +45,20 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
         return self.friends.count
     }
     
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-////            selectedCell = tableView(UITableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
-//    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            selectedCell = tableView(UITableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
+    }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("friend") as? FriendTableViewCell ?? FriendTableViewCell()
         
         var friend: AnyObject = self.friends[indexPath.row]
-        println(friend)
-        println("rasdf")
-        println(cell)
-        println("yo")
-        cell.firstNameLabel.text = friend["email"] as? String
-        println(friend["email"])
-        println("that was frist name")
+
+        cell.firstNameLabel.text = friend["firstName"] as? String
+
         cell.lastNameLabel.text = friend["lastName"] as? String
-        println(cell.firstNameLabel.text)
-        println("yoasdf")
-        
+
         println(friend)
         cell.firstNameLabel.sizeToFit()
         cell.lastNameLabel.sizeToFit()
