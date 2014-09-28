@@ -10,6 +10,10 @@ import UIKit
 
 class AddEntryViewController: UIViewController {
 
+    @IBOutlet var amountField: UITextField!
+    
+    @IBOutlet var payorField: UITextField!
+    
     var event: PFObject = PFObject(className: "Entry");
     var participants: [PFObject] = [];
     
@@ -24,15 +28,48 @@ class AddEntryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    private func error(message: String) {
+        var alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
 
-    /*
+    @IBAction func onCreate(sender: AnyObject) {
+        if (self.amountField.text.isEmpty) {
+            self.error("Amount cannot be empty")
+        } else if (self.payorField.text.isEmpty){
+            self.error("payor cannot be empty")
+        }
+        else{
+            
+            //need to create a new entry based on the input
+            
+            
+            
+//            var newEntry = PFObject(className: "Entry");
+//            newEntry["name"] = self.nameField.text;
+//            var participants = newEvent.relationForKey("participants")
+//            participants.addObject(PFUser.currentUser());
+//            // TODO add friends
+//            newEvent.saveInBackgroundWithBlock {
+//                (succeeded: Bool!, error: NSError!) -> Void in
+//                if error == nil {
+//                    self.navigationController?.popViewControllerAnimated(true);
+//                } else {
+//                    self.error("Failed to create event");
+//                }
+//            }
+        }
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+//        // Get the new view controller using segue.destinationViewController.
+//        // Pass the selected object to the new view controller.
+//    }
+
 
 }
