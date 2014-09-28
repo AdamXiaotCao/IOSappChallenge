@@ -12,7 +12,6 @@ class AddEntryViewController: UIViewController {
 
     @IBOutlet var amountField: UITextField!
     
-    @IBOutlet var payorField: UITextField!
     
     var event: PFObject = PFObject(className: "Entry");
     var participants: [PFObject] = [];
@@ -35,14 +34,7 @@ class AddEntryViewController: UIViewController {
     }
     
 
-    @IBAction func onCreate(sender: AnyObject) {
-        if (self.amountField.text.isEmpty) {
-            self.error("Amount cannot be empty")
-        } else if (self.payorField.text.isEmpty){
-            self.error("payor cannot be empty")
-        }
-        else{
-            
+
             //need to create a new entry based on the input
             
             
