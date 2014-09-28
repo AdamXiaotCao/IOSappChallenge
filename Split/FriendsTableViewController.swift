@@ -13,11 +13,17 @@ struct Friend {
     var last_name: String
 }
 
-class FriendsTableViewController: UITableViewController {
+class FriendsTableViewController: UITableViewController, UITableViewDataSource {
+    
+    
 
     var friends: [PFUser] = []
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        PFUser.logInWithUsername("harry", password: "123")
+        
         var user = PFUser.currentUser()
         var query = PFUser.query()
         query.whereKey("friends", equalTo: user)
@@ -29,37 +35,39 @@ class FriendsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-//        friend["firstnmae"] as String
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
 
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.friends.count
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//            selectedCell = tableView(UITableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
-    }
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+////            selectedCell = tableView(UITableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
+//    }
 
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        var cell = tableView.dequeueReusableCellWithIdentifier("event") as? EventCellTableViewCell ?? EventCellTableViewCell()
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("friend") as? FriendTableViewCell ?? FriendTableViewCell()
         
-        var event: AnyObject = self.events[indexPath.row]
-        var dateCreated = event.createdAt
-        var dateFormat = NSDateFormatter();
-        dateFormat.dateFormat = "EEE, MMM d, h:mm a";
-        cell.nameLabel.text = event["name"] as? String
-        cell.dateLabel.text = NSString(format: "%@", dateFormat.stringFromDate(dateCreated))
-        cell.dateLabel.sizeToFit();
+        var friend: AnyObject = self.friends[indexPath.row]
+        println(friend)
+        println("rasdf")
+        println(cell)
+        println("yo")
+        cell.firstNameLabel.text = friend["email"] as? String
+        println(friend["email"])
+        println("that was frist name")
+        cell.lastNameLabel.text = friend["lastName"] as? String
+        println(cell.firstNameLabel.text)
+        println("yoasdf")
+        
+        println(friend)
+        cell.firstNameLabel.sizeToFit()
+        cell.lastNameLabel.sizeToFit()
         return cell
     }
 

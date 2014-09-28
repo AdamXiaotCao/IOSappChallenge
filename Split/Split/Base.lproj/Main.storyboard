@@ -437,6 +437,7 @@
                             <outlet property="delegate" destination="e1B-jr-NMO" id="eTJ-bb-JXu"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="krv-50-jjl"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCf-8e-cal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -453,7 +454,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="IP3-yy-aRQ" kind="relationship" relationship="rootViewController" id="pyN-rV-tMX"/>
+                        <segue destination="IP3-yy-aRQ" kind="relationship" relationship="rootViewController" id="Oyv-dn-lCg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRX-7X-bQA" userLabel="First Responder" sceneMemberID="firstResponder"/>

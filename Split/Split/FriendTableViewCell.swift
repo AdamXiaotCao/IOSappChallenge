@@ -12,7 +12,6 @@ class FriendTableViewCell: UITableViewCell {
 
     
     @IBOutlet var firstNameLabel: UILabel!
-    
     @IBOutlet var lastNameLabel: UILabel!
     
     override func awakeFromNib() {

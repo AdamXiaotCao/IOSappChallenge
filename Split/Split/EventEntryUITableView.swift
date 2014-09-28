@@ -28,7 +28,8 @@ class EventEntryUITableView: UITableView, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        return nil
+        var table = EventCellTableViewCell()
+        return table
     }
 
 }
