@@ -116,7 +116,7 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
         //still need to work on the back end
         
         
-    }
+    
 //    @IBAction func onCreate(sender: UIButton) {
 //        if (self.nameField.text.isEmpty) {
 //            self.error("Name cannot be empty");
