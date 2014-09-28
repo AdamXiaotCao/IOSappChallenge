@@ -21,19 +21,7 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            switch segue.identifier {
-            case "tableToDisplay":
-                if var secondViewController = segue.destinationViewController as? ReminderDisplayViewController {
-                    if var cell = sender as? ReminderCellTableViewCell {
-                        secondViewController.titleString = cell.reminderTitle.text!
-                        secondViewController.dateString = cell.reminderDate.text!
-                    }
-                }
-            default:
-                break
-            }
-            
+
     }
 
     /*

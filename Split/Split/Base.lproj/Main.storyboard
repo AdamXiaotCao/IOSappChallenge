@@ -149,28 +149,37 @@
             </objects>
             <point key="canvasLocation" x="907" y="70"/>
         </scene>
-        <!--Table View Controller-->
+        <!--All Events-->
         <scene sceneID="nFr-zJ-e1t">
             <objects>
-                <tableViewController id="9jc-wb-QcE" sceneMemberID="viewController">
+                <tableViewController id="9jc-wb-QcE" customClass="EventTableViewController" customModule="Split" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1mN-lz-YIs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VpC-Ns-Meg">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VpC-Ns-Meg" customClass="EventCellTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VpC-Ns-Meg" id="W48-cd-yX9">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhq-G6-mkf">
-                                            <rect key="frame" x="18" y="7" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhq-G6-mkf">
+                                            <rect key="frame" x="18" y="7" width="91" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUa-4M-hC2">
+                                            <rect key="frame" x="218" y="11" width="78" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="uhq-G6-mkf" id="NNu-Dr-oiW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -178,7 +187,7 @@
                             <outlet property="delegate" destination="9jc-wb-QcE" id="clA-B7-9rn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gbj-FJ-2jh"/>
+                    <navigationItem key="navigationItem" title="All Events" id="VgV-kC-4PO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Id7-Jr-ozT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,8 +8,42 @@
 
 import UIKit
 
-class EventTableViewController: UITableViewController {
+struct Entry {
+    var amount: Float
+    var event: String
+    var creator: String
+    var payer: String
+    
+}
 
+struct Event{
+    var name: String
+    var entries : [Entry]
+    var participants: [User]
+
+}
+
+struct User{
+    var userName: String
+    var password: String
+}
+
+var adam = User(userName: "adam", password: "123")
+var harry = User(userName: "harry", password: "1234")
+var entry1 = Entry(amount: 10.5, event: "food", creator: "adam" , payer: "harry")
+var entry2 = Entry(amount: 10.2, event: "coffee", creator: "harry" , payer: "harry")
+
+
+
+class EventTableViewController: UITableViewController, UITableViewDataSource {
+
+
+
+    var events : [Event] = [
+        Event(name: "cali trip", entries: [entry1, entry2], participants: [adam,harry]),
+        Event(name: "miami trip", entries: [entry1, entry2], participants: [adam,harry])
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,27 +61,34 @@ class EventTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return events.count
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return 0
     }
-
-    /*
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
-        return cell
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
     }
-    */
+
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+       
+        var cell = tableView.dequeueReusableCellWithIdentifier("event") as? EventCellTableViewCell ?? EventCellTableViewCell()
+        var event = self.events[indexPath.row]
+        
+        cell.nameLabel.text = event.name
+        cell.dateLabel.text = "2014-09-09"
+        
+        return cell
+
+    }
 
     /*
     // Override to support conditional editing of the table view.
