@@ -19,6 +19,7 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
     
     var selectedCells = Dictionary<String, PFUser>()
     var friends: [PFUser] = []
+    var event: PFObject = PFObject()
 
     
     override func viewDidLoad() {
@@ -107,12 +108,23 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
+
     
     @IBAction func onCreate(sender: AnyObject) {
-        var newFriendList: [PFUser] = []
-        for (objId,friend) in selectedCells{
-            newFriendList.append(friend)
+        
+        if (selectedCells.isEmpty){
+            self.error("you need to choose friends to add")
+            return
         }
+        
+        for (objId,friend) in selectedCells{
+            friends.append(friend)
+        }
+        
+            self.navigationController?.popViewControllerAnimated(true)
+            
+    
+    }
         //still need to work on the back end
         
         
@@ -135,7 +147,7 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
 //                }
 //            }
 //        }
-    }
+//    }
 
 
     /*

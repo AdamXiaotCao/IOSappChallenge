@@ -11,6 +11,8 @@ import UIKit
 class NewEventViewController: UIViewController {
 
     @IBOutlet var nameField: UITextField!
+    var friends: [PFUser] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +46,13 @@ class NewEventViewController: UIViewController {
                     self.error("Failed to create event");
                 }
             }
+        }
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "addFriends"){
+            var friendsController = segue.destinationViewController as FriendsTableViewController
+            friendsController.friends = self.friends
         }
     }
     /*
