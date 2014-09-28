@@ -71,6 +71,7 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCellWithIdentifier("event") as? EventCellTableViewCell ?? EventCellTableViewCell()
+
         var event: AnyObject = self.events[indexPath.row]
         var dateCreated = event.createdAt
         var dateFormat = NSDateFormatter();
@@ -81,6 +82,7 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
         return cell
         
     }
+
 //    
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
