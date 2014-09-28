@@ -38,6 +38,9 @@ class NewEventViewController: UIViewController {
             var participants = newEvent.relationForKey("participants")
             participants.addObject(PFUser.currentUser());
             // TODO add friends
+            for friend in self.friends{
+                participants.addObject(friend)
+            }
             newEvent.saveInBackgroundWithBlock {
                 (succeeded: Bool!, error: NSError!) -> Void in
                 if error == nil {
@@ -53,7 +56,11 @@ class NewEventViewController: UIViewController {
         if (segue.identifier == "addFriends"){
             var friendsController = segue.destinationViewController as FriendsTableViewController
             friendsController.friends = self.friends
+            friendsController.parent = self
         }
+    }
+    override func viewWillAppear(animated: Bool) {
+        println(self.friends)
     }
     /*
     // MARK: - Navigation

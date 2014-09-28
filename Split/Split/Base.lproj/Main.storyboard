@@ -468,7 +468,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="e1B-jr-NMO" kind="push" id="Dmh-qf-zRH"/>
+                                    <segue destination="e1B-jr-NMO" kind="push" identifier="addFriends" id="Dmh-qf-zRH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3P3-sv-Xqs">

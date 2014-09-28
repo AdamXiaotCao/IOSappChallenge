@@ -19,7 +19,7 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
     
     var selectedCells = Dictionary<String, PFUser>()
     var friends: [PFUser] = []
-    var event: PFObject = PFObject()
+    var parent: NewEventViewController = NewEventViewController()
 
     
     override func viewDidLoad() {
@@ -120,6 +120,7 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
         for (objId,friend) in selectedCells{
             friends.append(friend)
         }
+        parent.friends = self.friends
         
             self.navigationController?.popViewControllerAnimated(true)
             
