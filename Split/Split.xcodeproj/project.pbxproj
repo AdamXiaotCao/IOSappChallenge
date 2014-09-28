@@ -23,7 +23,6 @@
 		587B23F519D7832800E1F198 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B23F419D7832800E1F198 /* EventTableViewController.swift */; };
 		587B23F919D796E100E1F198 /* EventCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B23F819D796E100E1F198 /* EventCellTableViewCell.swift */; };
 		587B23FB19D7A60100E1F198 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B23FA19D7A60100E1F198 /* NewEventViewController.swift */; };
-		587B23FD19D7B0F200E1F198 /* AllEventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B23FC19D7B0F200E1F198 /* AllEventsCollectionViewController.swift */; };
 		58FD41E819D66B5100BFBE35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD41E719D66B5100BFBE35 /* AppDelegate.swift */; };
 		58FD41EA19D66B5100BFBE35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD41E919D66B5100BFBE35 /* ViewController.swift */; };
 		58FD41ED19D66B5100BFBE35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58FD41EB19D66B5100BFBE35 /* Main.storyboard */; };
@@ -67,7 +66,6 @@
 		587B23F419D7832800E1F198 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		587B23F819D796E100E1F198 /* EventCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCellTableViewCell.swift; sourceTree = "<group>"; };
 		587B23FA19D7A60100E1F198 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
-		587B23FC19D7B0F200E1F198 /* AllEventsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllEventsCollectionViewController.swift; sourceTree = "<group>"; };
 		58FD41E219D66B5100BFBE35 /* Split.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Split.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FD41E619D66B5100BFBE35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58FD41E719D66B5100BFBE35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				58FD41E919D66B5100BFBE35 /* ViewController.swift */,
 				58FD41EB19D66B5100BFBE35 /* Main.storyboard */,
 				587B23F419D7832800E1F198 /* EventTableViewController.swift */,
-				587B23FC19D7B0F200E1F198 /* AllEventsCollectionViewController.swift */,
 				587B23FA19D7A60100E1F198 /* NewEventViewController.swift */,
 				587B23F819D796E100E1F198 /* EventCellTableViewCell.swift */,
 				58FD41EE19D66B5100BFBE35 /* Images.xcassets */,
@@ -309,7 +306,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				58FD41EA19D66B5100BFBE35 /* ViewController.swift in Sources */,
-				587B23FD19D7B0F200E1F198 /* AllEventsCollectionViewController.swift in Sources */,
 				58FD421B19D66CCA00BFBE35 /* SideBarTableViewController.swift in Sources */,
 				587B23FB19D7A60100E1F198 /* NewEventViewController.swift in Sources */,
 				587B23ED19D67D5200E1F198 /* SideBar.swift in Sources */,
