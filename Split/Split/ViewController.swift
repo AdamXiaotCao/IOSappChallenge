@@ -74,17 +74,6 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func onLogin(sender: UIButton) {
-        PFUser.logInWithUsernameInBackground(self.usernameField.text, password: self.passwordField.text) {
-            (user: PFUser!, error: NSError!) -> Void in
-            if user != nil {
-                // Do stuff after successful login.
-            } else {
-                self.errorMessage.text = error.userInfo!["error"]! as? String;
-            }
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

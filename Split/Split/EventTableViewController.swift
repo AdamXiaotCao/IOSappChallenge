@@ -42,6 +42,34 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
         Event(name: "miami trip", entries: [entry1, entry2], participants: [adam,harry])
     ]
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        var user = PFUser.currentUser();
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            var query = PFQuery(className: "Event");
+            query.whereKey("participants", equalTo: user);
+            var objects = query.findObjects();
+            dispatch_sync(dispatch_get_main_queue(), {
+                // update ui
+            });
+            println(objects);
+        });
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            var fquery = PFUser.query();
+            fquery.whereKey("friends", equalTo: user)
+            var friends = fquery.findObjects();
+            dispatch_sync(dispatch_get_main_queue(), {
+                // update ui
+            });
+            println(friends);
+        });
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         

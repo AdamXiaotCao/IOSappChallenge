@@ -10,6 +10,10 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet var usernameField: UITextField!
+    @IBOutlet var passwordField: UITextField!
+    @IBOutlet var errorMessage: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,10 +24,28 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        switch segue.identifier {
+//            case "loginToEvent":
+//                if var eventController = segue.destinationViewController as? EventTableViewController {
+//                    
+//                }
+//            default:
+//                break
+//        }
+//    }
 
+    @IBAction func onLogin(sender: UIButton) {
+        PFUser.logInWithUsernameInBackground(self.usernameField.text, password: self.passwordField.text) {
+            (user: PFUser!, error: NSError!) -> Void in
+            if user != nil {
+                self.performSegueWithIdentifier("loginToEvent", sender: sender);
+            } else {
+                self.errorMessage.text = error.userInfo!["error"]! as? String;
+            }
+        }
     }
-
+    
     /*
     // MARK: - Navigation
 
