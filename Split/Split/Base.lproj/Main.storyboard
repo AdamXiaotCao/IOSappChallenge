@@ -366,6 +366,24 @@
             </objects>
             <point key="canvasLocation" x="721" y="1569"/>
         </scene>
+        <!--Make Payment View Controller-->
+        <scene sceneID="XPO-Sd-hf1">
+            <objects>
+                <viewController id="08n-P7-tjR" customClass="MakePaymentViewController" customModule="Split" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MbZ-vQ-xEb"/>
+                        <viewControllerLayoutGuide type="bottom" id="cga-bB-bOz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UC4-VK-kta">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uJI-YH-zqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="835" y="2254"/>
+        </scene>
         <!--New Entry-->
         <scene sceneID="xed-2O-1Qd">
             <objects>
@@ -545,6 +563,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCreate:" destination="e1B-jr-NMO" eventType="touchUpInside" id="00p-Sy-Lt7"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>

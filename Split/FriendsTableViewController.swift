@@ -101,6 +101,41 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
+    
+    private func error(message: String) {
+        var alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func onCreate(sender: AnyObject) {
+        var newFriendList: [PFUser] = []
+        for (objId,friend) in selectedCells{
+            newFriendList.append(friend)
+        }
+        //still need to work on the back end
+        
+        
+    }
+//    @IBAction func onCreate(sender: UIButton) {
+//        if (self.nameField.text.isEmpty) {
+//            self.error("Name cannot be empty");
+//        } else {
+//            var newEvent = PFObject(className: "Event");
+//            newEvent["name"] = self.nameField.text;
+//            var participants = newEvent.relationForKey("participants")
+//            participants.addObject(PFUser.currentUser());
+//            // TODO add friends
+//            newEvent.saveInBackgroundWithBlock {
+//                (succeeded: Bool!, error: NSError!) -> Void in
+//                if error == nil {
+//                    self.navigationController?.popViewControllerAnimated(true);
+//                } else {
+//                    self.error("Failed to create event");
+//                }
+//            }
+//        }
+    }
 
 
     /*

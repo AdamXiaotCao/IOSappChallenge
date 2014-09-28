@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		581A353919D892D000298C1C /* MakePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A353819D892D000298C1C /* MakePaymentViewController.swift */; };
 		5847612419D8037900B752A6 /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5847612319D8037900B752A6 /* EventDetailTableViewController.swift */; };
 		5847612619D804CC00B752A6 /* EventDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5847612519D804CC00B752A6 /* EventDetailTableViewCell.swift */; };
 		587B23D719D66FFC00E1F198 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B23D619D66FFC00E1F198 /* CoreData.framework */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		581A353819D892D000298C1C /* MakePaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakePaymentViewController.swift; sourceTree = "<group>"; };
 		5847612319D8037900B752A6 /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
 		5847612519D804CC00B752A6 /* EventDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewCell.swift; sourceTree = "<group>"; };
 		587B23D619D66FFC00E1F198 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -177,6 +179,7 @@
 				5847612319D8037900B752A6 /* EventDetailTableViewController.swift */,
 				587B240A19D7C02D00E1F198 /* EventEntryTableViewCell.swift */,
 				587B240019D7B3AD00E1F198 /* FriendsTableViewController.swift */,
+				581A353819D892D000298C1C /* MakePaymentViewController.swift */,
 				58FD41E719D66B5100BFBE35 /* AppDelegate.swift */,
 				58FD421A19D66CCA00BFBE35 /* SideBarTableViewController.swift */,
 				587B23F019D7808200E1F198 /* LoginViewController.swift */,
@@ -337,6 +340,7 @@
 				587B240119D7B3AD00E1F198 /* FriendsTableViewController.swift in Sources */,
 				587B23ED19D67D5200E1F198 /* SideBar.swift in Sources */,
 				587B23F119D7808200E1F198 /* LoginViewController.swift in Sources */,
+				581A353919D892D000298C1C /* MakePaymentViewController.swift in Sources */,
 				587B240B19D7C02D00E1F198 /* EventEntryTableViewCell.swift in Sources */,
 				587B240D19D7C29700E1F198 /* EventEntryUITableView.swift in Sources */,
 				5847612419D8037900B752A6 /* EventDetailTableViewController.swift in Sources */,
