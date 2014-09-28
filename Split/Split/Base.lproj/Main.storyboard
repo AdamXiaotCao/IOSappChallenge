@@ -205,7 +205,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9jc-wb-QcE" kind="relationship" relationship="rootViewController" id="3ah-IM-EN1"/>
+                        <segue destination="IP3-yy-aRQ" kind="relationship" relationship="rootViewController" id="pyN-rV-tMX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRX-7X-bQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -218,7 +218,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="iKE-f5-9Gy"/>
-    </inferredMetricsTieBreakers>
 </document>
