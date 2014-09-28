@@ -52,7 +52,6 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
             dispatch_sync(dispatch_get_main_queue(), {
                 // update ui
             });
-            println(objects);
         });
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
@@ -62,7 +61,6 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
             dispatch_sync(dispatch_get_main_queue(), {
                 // update ui
             });
-            println(friends);
         });
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -99,7 +97,6 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
 //    }
 
     // MARK: - Table view data source
-
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.events.count
@@ -111,13 +108,13 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
 
 
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
     /*
     // Override to support editing the table view.
