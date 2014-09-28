@@ -26,17 +26,23 @@ class ViewController: UIViewController {
             var users = query.findObjects();
             dispatch_sync(dispatch_get_main_queue(), {
                 if (!users.isEmpty) {
-                    self.errorMessage.text = "taken";
+                    self.errorMessage.text = "username taken";
                     self.errorMessage.sizeToFit();
                     self.registerButton.enabled = false;
                 } else if (!self.registerButton.enabled) {
-                    self.errorMessage.text = "message";
+                    self.errorMessage.text = "";
                     self.errorMessage.sizeToFit();
                     self.registerButton.enabled = true;
                 }
             });
             self.threadLock.unlock()
         })
+    }
+    
+    private func error(message: String) {
+        var alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     @IBAction func onRegister(sender: UIButton) {

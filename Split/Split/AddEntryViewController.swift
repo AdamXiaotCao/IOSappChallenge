@@ -95,11 +95,16 @@ class AddEntryViewController: UIViewController {
         newEntry["event"] = self.event;
         newEntry["amount"] = amountString.toInt()!
         var dict = Dictionary<String, Int>();
+        var myId = PFUser.currentUser()!.objectId;
         for (var i = 0; i < self.participants.count; i++) {
-            dict[self.participants[i].objectId] = self.individualFields[i].text.toInt()!;
+            let id = self.participants[i].objectId;
+            if (id == myId) {
+                dict[id] = 0;
+            } else {
+                dict[id] = self.individualFields[i].text.toInt()!;
+            }
         }
         newEntry["breakdown"] = dict;
-                    // TODO add friends
         newEntry.saveInBackgroundWithBlock {
             (succeeded: Bool!, error: NSError!) -> Void in
                 if error == nil {

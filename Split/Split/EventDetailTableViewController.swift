@@ -19,11 +19,7 @@ class EventDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.updateEntries()
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            var query = self.event.relationForKey("participants").query();
-            self.participants = query.findObjects() as [PFObject];
-        });
+
     }
     
     func updateEntries() {
@@ -35,6 +31,14 @@ class EventDetailTableViewController: UITableViewController {
                 self.tableView.reloadData()
             });
         });
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            var query = self.event.relationForKey("participants").query();
+            self.participants = query.findObjects() as [PFObject];
+        });
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.updateEntries();
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
