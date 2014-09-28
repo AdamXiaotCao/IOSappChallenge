@@ -116,7 +116,7 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "eventToEventDetail") {
             var selectedIndex = self.tableView.indexPathForSelectedRow();
-            var detailController = segue.destinationViewController as EventDetailViewController;
+            var detailController = segue.destinationViewController as EventDetailTableViewController;
             detailController.event = self.events[selectedIndex!.row] as PFObject;
             
         }

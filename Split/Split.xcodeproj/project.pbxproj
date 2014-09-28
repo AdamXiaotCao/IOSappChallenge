@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5847612419D8037900B752A6 /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5847612319D8037900B752A6 /* EventDetailTableViewController.swift */; };
+		5847612619D804CC00B752A6 /* EventDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5847612519D804CC00B752A6 /* EventDetailTableViewCell.swift */; };
 		587B23D719D66FFC00E1F198 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B23D619D66FFC00E1F198 /* CoreData.framework */; };
 		587B23D919D6716D00E1F198 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B23D819D6716D00E1F198 /* AudioToolbox.framework */; };
 		587B23DB19D6717600E1F198 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B23DA19D6717600E1F198 /* CFNetwork.framework */; };
@@ -26,7 +28,6 @@
 		587B23FF19D7B39E00E1F198 /* AllEventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B23FE19D7B39D00E1F198 /* AllEventsCollectionViewController.swift */; };
 		587B240119D7B3AD00E1F198 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B240019D7B3AD00E1F198 /* FriendsTableViewController.swift */; };
 		587B240319D7BAF900E1F198 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B240219D7BAF900E1F198 /* FriendTableViewCell.swift */; };
-		587B240519D7BED400E1F198 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B240419D7BED400E1F198 /* EventDetailViewController.swift */; };
 		587B240719D7BFB200E1F198 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B240619D7BFB200E1F198 /* AddEntryViewController.swift */; };
 		587B240B19D7C02D00E1F198 /* EventEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B240A19D7C02D00E1F198 /* EventEntryTableViewCell.swift */; };
 		587B240D19D7C29700E1F198 /* EventEntryUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B240C19D7C29700E1F198 /* EventEntryUITableView.swift */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5847612319D8037900B752A6 /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
+		5847612519D804CC00B752A6 /* EventDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewCell.swift; sourceTree = "<group>"; };
 		587B23D619D66FFC00E1F198 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		587B23D819D6716D00E1F198 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		587B23DA19D6717600E1F198 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -76,7 +79,6 @@
 		587B23FE19D7B39D00E1F198 /* AllEventsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllEventsCollectionViewController.swift; path = ../AllEventsCollectionViewController.swift; sourceTree = "<group>"; };
 		587B240019D7B3AD00E1F198 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsTableViewController.swift; path = ../FriendsTableViewController.swift; sourceTree = "<group>"; };
 		587B240219D7BAF900E1F198 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
-		587B240419D7BED400E1F198 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailViewController.swift; path = ../EventDetailViewController.swift; sourceTree = "<group>"; };
 		587B240619D7BFB200E1F198 /* AddEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
 		587B240A19D7C02D00E1F198 /* EventEntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEntryTableViewCell.swift; sourceTree = "<group>"; };
 		587B240C19D7C29700E1F198 /* EventEntryUITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEntryUITableView.swift; sourceTree = "<group>"; };
@@ -168,10 +170,11 @@
 		58FD41E419D66B5100BFBE35 /* Split */ = {
 			isa = PBXGroup;
 			children = (
-				587B240419D7BED400E1F198 /* EventDetailViewController.swift */,
+				5847612519D804CC00B752A6 /* EventDetailTableViewCell.swift */,
 				587B23FE19D7B39D00E1F198 /* AllEventsCollectionViewController.swift */,
 				587B240619D7BFB200E1F198 /* AddEntryViewController.swift */,
 				587B240C19D7C29700E1F198 /* EventEntryUITableView.swift */,
+				5847612319D8037900B752A6 /* EventDetailTableViewController.swift */,
 				587B240A19D7C02D00E1F198 /* EventEntryTableViewCell.swift */,
 				587B240019D7B3AD00E1F198 /* FriendsTableViewController.swift */,
 				58FD41E719D66B5100BFBE35 /* AppDelegate.swift */,
@@ -332,15 +335,16 @@
 				587B23FB19D7A60100E1F198 /* NewEventViewController.swift in Sources */,
 				587B240319D7BAF900E1F198 /* FriendTableViewCell.swift in Sources */,
 				587B240119D7B3AD00E1F198 /* FriendsTableViewController.swift in Sources */,
-				587B240519D7BED400E1F198 /* EventDetailViewController.swift in Sources */,
 				587B23ED19D67D5200E1F198 /* SideBar.swift in Sources */,
 				587B23F119D7808200E1F198 /* LoginViewController.swift in Sources */,
 				587B240B19D7C02D00E1F198 /* EventEntryTableViewCell.swift in Sources */,
 				587B240D19D7C29700E1F198 /* EventEntryUITableView.swift in Sources */,
+				5847612419D8037900B752A6 /* EventDetailTableViewController.swift in Sources */,
 				587B23F919D796E100E1F198 /* EventCellTableViewCell.swift in Sources */,
 				587B240719D7BFB200E1F198 /* AddEntryViewController.swift in Sources */,
 				587B23F519D7832800E1F198 /* EventTableViewController.swift in Sources */,
 				58FD41E819D66B5100BFBE35 /* AppDelegate.swift in Sources */,
+				5847612619D804CC00B752A6 /* EventDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
