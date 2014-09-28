@@ -46,7 +46,7 @@ class FriendsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-            selectedCell = tableView(UITableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
+//            selectedCell = tableView(UITableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
     }
 
     /*

@@ -26,6 +26,10 @@
 		587B23FF19D7B39E00E1F198 /* AllEventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B23FE19D7B39D00E1F198 /* AllEventsCollectionViewController.swift */; };
 		587B240119D7B3AD00E1F198 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B240019D7B3AD00E1F198 /* FriendsTableViewController.swift */; };
 		587B240319D7BAF900E1F198 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B240219D7BAF900E1F198 /* FriendTableViewCell.swift */; };
+		587B240519D7BED400E1F198 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B240419D7BED400E1F198 /* EventDetailViewController.swift */; };
+		587B240719D7BFB200E1F198 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B240619D7BFB200E1F198 /* AddEntryViewController.swift */; };
+		587B240B19D7C02D00E1F198 /* EventEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B240A19D7C02D00E1F198 /* EventEntryTableViewCell.swift */; };
+		587B240D19D7C29700E1F198 /* EventEntryUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B240C19D7C29700E1F198 /* EventEntryUITableView.swift */; };
 		58FD41E819D66B5100BFBE35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD41E719D66B5100BFBE35 /* AppDelegate.swift */; };
 		58FD41EA19D66B5100BFBE35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD41E919D66B5100BFBE35 /* ViewController.swift */; };
 		58FD41ED19D66B5100BFBE35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58FD41EB19D66B5100BFBE35 /* Main.storyboard */; };
@@ -72,6 +76,10 @@
 		587B23FE19D7B39D00E1F198 /* AllEventsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllEventsCollectionViewController.swift; path = ../AllEventsCollectionViewController.swift; sourceTree = "<group>"; };
 		587B240019D7B3AD00E1F198 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsTableViewController.swift; path = ../FriendsTableViewController.swift; sourceTree = "<group>"; };
 		587B240219D7BAF900E1F198 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		587B240419D7BED400E1F198 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailViewController.swift; path = ../EventDetailViewController.swift; sourceTree = "<group>"; };
+		587B240619D7BFB200E1F198 /* AddEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
+		587B240A19D7C02D00E1F198 /* EventEntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEntryTableViewCell.swift; sourceTree = "<group>"; };
+		587B240C19D7C29700E1F198 /* EventEntryUITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEntryUITableView.swift; sourceTree = "<group>"; };
 		58FD41E219D66B5100BFBE35 /* Split.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Split.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FD41E619D66B5100BFBE35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58FD41E719D66B5100BFBE35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,7 +168,11 @@
 		58FD41E419D66B5100BFBE35 /* Split */ = {
 			isa = PBXGroup;
 			children = (
+				587B240419D7BED400E1F198 /* EventDetailViewController.swift */,
 				587B23FE19D7B39D00E1F198 /* AllEventsCollectionViewController.swift */,
+				587B240619D7BFB200E1F198 /* AddEntryViewController.swift */,
+				587B240C19D7C29700E1F198 /* EventEntryUITableView.swift */,
+				587B240A19D7C02D00E1F198 /* EventEntryTableViewCell.swift */,
 				587B240019D7B3AD00E1F198 /* FriendsTableViewController.swift */,
 				58FD41E719D66B5100BFBE35 /* AppDelegate.swift */,
 				58FD421A19D66CCA00BFBE35 /* SideBarTableViewController.swift */,
@@ -320,9 +332,13 @@
 				587B23FB19D7A60100E1F198 /* NewEventViewController.swift in Sources */,
 				587B240319D7BAF900E1F198 /* FriendTableViewCell.swift in Sources */,
 				587B240119D7B3AD00E1F198 /* FriendsTableViewController.swift in Sources */,
+				587B240519D7BED400E1F198 /* EventDetailViewController.swift in Sources */,
 				587B23ED19D67D5200E1F198 /* SideBar.swift in Sources */,
 				587B23F119D7808200E1F198 /* LoginViewController.swift in Sources */,
+				587B240B19D7C02D00E1F198 /* EventEntryTableViewCell.swift in Sources */,
+				587B240D19D7C29700E1F198 /* EventEntryUITableView.swift in Sources */,
 				587B23F919D796E100E1F198 /* EventCellTableViewCell.swift in Sources */,
+				587B240719D7BFB200E1F198 /* AddEntryViewController.swift in Sources */,
 				587B23F519D7832800E1F198 /* EventTableViewController.swift in Sources */,
 				58FD41E819D66B5100BFBE35 /* AppDelegate.swift in Sources */,
 			);
