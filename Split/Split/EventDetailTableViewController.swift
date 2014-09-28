@@ -12,30 +12,38 @@ class EventDetailTableViewController: UITableViewController {
 
 
     var event: PFObject = PFObject(className: "Event")
-
+    var entries: [PFObject] = []
+    var participants: [PFObject] = []
 
     @IBOutlet var entriesTable: EventEntryUITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.nameLabel.text = self.event["name"] as? String
-//        self.nameLabel.sizeToFit()
-//        var dateFormat = NSDateFormatter();
-//        dateFormat.dateFormat = "EEE, MMM d, h:mm a";
-//        self.dateLabel.text = NSString(format: "%@", dateFormat.stringFromDate(self.event.createdAt))
-//        self.dateLabel.sizeToFit()
-        // Do any additional setup after loading the view.
+        self.updateEntries()
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            var query = self.event.relationForKey("participants").query();
+            self.participants = query.findObjects() as [PFObject];
+        });
     }
     
     func updateEntries() {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             var query = PFQuery(className: "Entry");
             query.whereKey("event", equalTo: self.event);
-            self.entriesTable.entries = query.findObjects() as [PFObject];
+            self.entries = query.findObjects() as [PFObject];
             dispatch_sync(dispatch_get_main_queue(), {
-                self.entriesTable.reloadData()
+                self.tableView.reloadData()
             });
         });
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "eventDetailToNewEntry") {
+            var addController = segue.destinationViewController as AddEntryViewController;
+            addController.participants = self.participants
+            addController.event = self.event
+            
+        }
     }
     
 
@@ -46,27 +54,58 @@ class EventDetailTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 2
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        if (section == 0) {
+            return 1;
+        }
+        return self.entries.count
     }
-
-    /*
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
-        return cell
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if (indexPath.section == 0) {
+            return 180;
+        } else {
+            return 60;
+        }
     }
-    */
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if (indexPath.section == 0) {
+            let cell = tableView.dequeueReusableCellWithIdentifier("eventDetailCell", forIndexPath: indexPath) as EventDetailTableViewCell
+            cell.nameLabel.text = self.event["name"] as? String;
+            var dateFormat = NSDateFormatter();
+            dateFormat.dateFormat = "EEE, MMM d, h:mm a";
+            cell.dateLabel.text = NSString(format: "%@", dateFormat.stringFromDate(self.event.createdAt))
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("entryCell", forIndexPath: indexPath) as? EventEntryTableViewCell ?? EventEntryTableViewCell();
+            var entry = self.entries[indexPath.row]
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                var query = PFUser.query();
+                query.whereKey("objectId", equalTo: entry["payer"].objectId);
+                var objs = query.findObjects()
+                var person = query.findObjects()[0] as PFObject;
+                dispatch_sync(dispatch_get_main_queue(), {
+                    var firstName = person["firstName"] as String;
+                    var lastName = person["lastName"] as String;
+                    cell.payerLabel.text = "\(firstName) \(lastName)";
+                });
+            });
+            var amount = entry["amount"] as Int;
+            cell.amountLabel.text = "\(amount)";
+            cell.commentLabel.text = entry["comment"] as? String;
+            return cell
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -10,6 +10,9 @@ import UIKit
 
 class AddEntryViewController: UIViewController {
 
+    var event: PFObject = PFObject(className: "Entry");
+    var participants: [PFObject] = [];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
