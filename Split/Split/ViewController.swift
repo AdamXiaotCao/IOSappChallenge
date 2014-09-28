@@ -65,15 +65,6 @@ class ViewController: UIViewController {
         }
     }
     
-    func getEvents() {
-        var user = PFUser.currentUser();
-        if (user == nil) {
-            // handle non-authenticated user
-            return;
-        }
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

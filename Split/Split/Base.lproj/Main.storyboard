@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hgz-Fl-k2F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hgz-Fl-k2F">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -164,7 +164,6 @@
         <!--All Events Collection View Controller-->
         <scene sceneID="8CD-PK-uUl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Zh-Qs-KpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="grr-IW-ikP" customClass="AllEventsCollectionViewController" customModule="Split" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="UEG-DH-5zZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -207,6 +206,7 @@
                         </connections>
                     </collectionView>
                 </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Zh-Qs-KpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="400" y="830"/>
         </scene>
@@ -255,8 +255,15 @@
                                 <action selector="onSync:" destination="9jc-wb-QcE" id="XQ6-jn-H4D"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Q0u-8O-Q1U"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Q0u-8O-Q1U">
+                            <connections>
+                                <action selector="onAddEvent:" destination="9jc-wb-QcE" id="0q3-OL-50f"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="7AV-KJ-osw" kind="push" identifier="eventToNewEvent" id="Ono-Hl-fnM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Id7-Jr-ozT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -265,7 +272,7 @@
         <!--New Event View Controller-->
         <scene sceneID="0hT-Qt-6cY">
             <objects>
-                <viewController id="7AV-KJ-osw" customClass="NewEventViewController" sceneMemberID="viewController">
+                <viewController id="7AV-KJ-osw" customClass="NewEventViewController" customModule="Split" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kA0-pi-ZYj"/>
                         <viewControllerLayoutGuide type="bottom" id="kHB-gB-cW9"/>
@@ -302,10 +309,17 @@
                                 <state key="normal" title="Create">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCreate:" destination="7AV-KJ-osw" eventType="touchUpInside" id="jkw-Fi-Enu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Wcg-ZK-w6B"/>
+                    <connections>
+                        <outlet property="nameField" destination="IWI-t3-C1e" id="pbX-ak-Pg1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5Q-bU-PiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

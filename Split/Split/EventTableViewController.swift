@@ -90,7 +90,10 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
         cell.dateLabel.text = NSString(format: "%@", dateFormat.stringFromDate(dateCreated))
         cell.dateLabel.sizeToFit();
         return cell
-        
+    }
+    
+    @IBAction func onAddEvent(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("eventToNewEvent", sender: sender);
     }
 
 //    
