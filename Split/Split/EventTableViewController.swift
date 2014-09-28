@@ -37,10 +37,7 @@ var entry2 = Entry(amount: 10.2, event: "coffee", creator: "harry" , payer: "har
 
 class EventTableViewController: UITableViewController, UITableViewDataSource {
 
-    var events : [Event] = [
-        Event(name: "cali trip", entries: [entry1, entry2], participants: [adam,harry]),
-        Event(name: "miami trip", entries: [entry1, entry2], participants: [adam,harry])
-    ]
+    var events : [AnyObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,9 +45,10 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             var query = PFQuery(className: "Event");
             query.whereKey("participants", equalTo: user);
-            var objects = query.findObjects();
+            self.events = query.findObjects();
+            
             dispatch_sync(dispatch_get_main_queue(), {
-                // update ui
+                self.tableView.reloadData()
             });
         });
         
@@ -62,6 +60,7 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
                 // update ui
             });
         });
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -72,11 +71,13 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCellWithIdentifier("event") as? EventCellTableViewCell ?? EventCellTableViewCell()
-        var event = self.events[indexPath.row]
-        
-        cell.nameLabel.text = event.name
-        cell.dateLabel.text = "2014-09-09"
-        
+        var event: AnyObject = self.events[indexPath.row]
+        var dateCreated = event.createdAt
+        var dateFormat = NSDateFormatter();
+        dateFormat.dateFormat = "EEE, MMM d, h:mm a";
+        cell.nameLabel.text = event["name"] as? String
+        cell.dateLabel.text = NSString(format: "%@", dateFormat.stringFromDate(dateCreated))
+        cell.dateLabel.sizeToFit();
         return cell
         
     }
