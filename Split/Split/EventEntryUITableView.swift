@@ -10,6 +10,8 @@ import UIKit
 
 class EventEntryUITableView: UITableView, UITableViewDataSource {
 
+    var entries: [PFObject] = []
+
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -18,18 +20,32 @@ class EventEntryUITableView: UITableView, UITableViewDataSource {
         // Drawing code
     }
     */
-    
+  
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        println("S")
         return 1
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        println(self.entries.count)
+        return self.entries.count
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var table = EventCellTableViewCell()
-        return table
+        println("view")
+        var cell = tableView.dequeueReusableCellWithIdentifier("entryCell", forIndexPath: indexPath) as EventEntryTableViewCell
+        var entry = self.entries[indexPath.row]
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            var query = PFUser.query();
+            query.whereKey("objectId", equalTo: entry.objectId);
+            var person = query.findObjects()[0] as PFObject;
+            dispatch_sync(dispatch_get_main_queue(), {
+                cell.payerLabel.text = person["firstName"] as? String;
+            });
+        });
+        cell.amountLabel.text = entry["amount"] as? String
+        cell.commentLabel.text = entry["comment"] as? String
+        return cell
     }
 
 }

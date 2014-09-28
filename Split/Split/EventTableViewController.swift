@@ -28,13 +28,6 @@ struct User{
     var password: String
 }
 
-var adam = User(userName: "adam", password: "123")
-var harry = User(userName: "harry", password: "1234")
-var entry1 = Entry(amount: 10.5, event: "food", creator: "adam" , payer: "harry")
-var entry2 = Entry(amount: 10.2, event: "coffee", creator: "harry" , payer: "harry")
-
-
-
 class EventTableViewController: UITableViewController, UITableViewDataSource {
 
     var events : [AnyObject] = []
@@ -43,7 +36,6 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         var user = PFUser.currentUser();
-        self.updateEvents(user);
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             var fquery = PFUser.query();
             fquery.whereKey("friends", equalTo: user)
@@ -62,12 +54,15 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    private func updateEvents(user : PFUser) {
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.updateEvents(PFUser.currentUser())
+    }
+    func updateEvents(user : PFUser) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             var query = PFQuery(className: "Event");
             query.whereKey("participants", equalTo: user);
             self.events = query.findObjects();
-            
             dispatch_sync(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
             });
@@ -119,12 +114,14 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if (segue.identifier == "eventToEventDetail") {
+            var selectedIndex = self.tableView.indexPathForSelectedRow();
+            var detailController = segue.destinationViewController as EventDetailViewController;
+            detailController.event = self.events[selectedIndex!.row] as PFObject;
+            
+        }
     }
 
-
-
-    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
         // Return NO if you do not want the specified item to be editable.

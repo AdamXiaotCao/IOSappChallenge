@@ -47,9 +47,6 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
         return self.friends.count
     }
     
-
-
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("friend") as? FriendTableViewCell ?? FriendTableViewCell()
         

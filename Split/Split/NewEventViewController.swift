@@ -33,7 +33,8 @@ class NewEventViewController: UIViewController {
         } else {
             var newEvent = PFObject(className: "Event");
             newEvent["name"] = self.nameField.text;
-            newEvent["participants"] = PFUser.currentUser();
+            var participants = newEvent.relationForKey("participants")
+            participants.addObject(PFUser.currentUser());
             // TODO add friends
             newEvent.saveInBackgroundWithBlock {
                 (succeeded: Bool!, error: NSError!) -> Void in

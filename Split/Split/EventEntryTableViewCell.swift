@@ -10,6 +10,10 @@ import UIKit
 
 class EventEntryTableViewCell: UITableViewCell {
 
+    @IBOutlet var payerLabel: UILabel!
+    @IBOutlet var amountLabel: UILabel!
+    @IBOutlet var commentLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
