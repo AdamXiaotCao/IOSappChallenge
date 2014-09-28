@@ -49,15 +49,20 @@ class FriendsTableViewController: UITableViewController {
 //            selectedCell = tableView(UITableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
     }
 
-    /*
+    
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
+        var cell = tableView.dequeueReusableCellWithIdentifier("event") as? EventCellTableViewCell ?? EventCellTableViewCell()
+        
+        var event: AnyObject = self.events[indexPath.row]
+        var dateCreated = event.createdAt
+        var dateFormat = NSDateFormatter();
+        dateFormat.dateFormat = "EEE, MMM d, h:mm a";
+        cell.nameLabel.text = event["name"] as? String
+        cell.dateLabel.text = NSString(format: "%@", dateFormat.stringFromDate(dateCreated))
+        cell.dateLabel.sizeToFit();
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
