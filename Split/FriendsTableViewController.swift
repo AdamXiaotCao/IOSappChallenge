@@ -47,49 +47,15 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
         return self.friends.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("friend") as? FriendTableViewCell ?? FriendTableViewCell()
-        
-        var friend: AnyObject = self.friends[indexPath.row]
-        
- 
-        cell.firstNameLabel.text = friend["firstName"] as? String
-
-        cell.lastNameLabel.text = friend["lastName"] as? String
-
-        var hasFound = false
-
-        for target in selectedCellArray {
-            println(" I am searching")
-            if (target.isEqual(cell)){
-                println("found it!!")
-                hasFound = true
-            }
-        }
-        if (hasFound){
-            println("reached here yasdfasdfo")
-            cell.accessoryType = .Checkmark
-          
-        }else{
-            println("reached here 12312yo")
-            cell.editingAccessoryType = .None
-        }
-    
-        cell.firstNameLabel.sizeToFit()
-        cell.lastNameLabel.sizeToFit()
-        return cell
-    }
-
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var  selectedCell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as FriendTableViewCell
-
+        
         if (selectedCell.accessoryType == UITableViewCellAccessoryType.None){
-            println("i am updating to check mark")
+            
             selectedCell.accessoryType = .Checkmark
             selectedCellArray.append(selectedCell)
         }else if (selectedCell.accessoryType == UITableViewCellAccessoryType.Checkmark){
-            println("reaching here as well")
+            
             selectedCell.accessoryType = .None
             var index = 0
             for cell in selectedCellArray{
@@ -99,26 +65,60 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
                     break
                 }
             }
-            println (index)
+          
             selectedCellArray.removeAtIndex(index)
             
-
+            
         }
-        tableView.reloadData()
-//        self.tableView(self.tableView, didDeselectRowAtIndexPath: indexPath)
-//        self.tableView(tableView, didDeselectRowAtIndexPath: indexPath)
+        self.tableView(tableView, cellForRowAtIndexPath: indexPath)
         
         
         
     }
+    
 
-    /*
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("friend") as? FriendTableViewCell ?? FriendTableViewCell()
+        var round = 0
+        var friend: AnyObject = self.friends[indexPath.row]
+        
+ 
+        cell.firstNameLabel.text = friend["firstName"] as? String
+
+        cell.lastNameLabel.text = friend["lastName"] as? String
+        println(selectedCellArray)
+        round++
+        var hasFound = false
+        if (self.checkSelectedArray(selectedCellArray, target: cell)){
+            cell.accessoryType = .Checkmark
+        }else{
+            cell.accessoryType = .None
+        }
+        
+        cell.firstNameLabel.sizeToFit()
+        cell.lastNameLabel.sizeToFit()
+        return cell
+    }
+    func checkSelectedArray(selectedArray:[FriendTableViewCell], target:FriendTableViewCell) -> Bool{
+        for cell in selectedCellArray{
+            if cell.isEqual(target){
+                return true
+            }
+        }
+        return false
+    }
+
+    
+ 
+
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
+
 
     /*
     // Override to support editing the table view.
