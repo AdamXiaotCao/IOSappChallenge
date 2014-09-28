@@ -17,7 +17,7 @@ struct Friend {
 class FriendsTableViewController: UITableViewController, UITableViewDataSource {
     
     
-    var selectedCellArray :[FriendTableViewCell] = []
+    var selectedCells = Dictionary<String, PFUser>()
     var friends: [PFUser] = []
 
     
@@ -41,6 +41,7 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
 
 
 
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
@@ -48,30 +49,21 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var  selectedCell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as FriendTableViewCell
+        let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as FriendTableViewCell
         
-        if (selectedCell.accessoryType == UITableViewCellAccessoryType.None){
-            
-            selectedCell.accessoryType = .Checkmark
-            selectedCellArray.append(selectedCell)
-        }else if (selectedCell.accessoryType == UITableViewCellAccessoryType.Checkmark){
-            
+        let objId = friends[indexPath.row].objectId
+        if (selectedCells[objId] != nil){
             selectedCell.accessoryType = .None
-            var index = 0
-            for cell in selectedCellArray{
-                if (cell != selectedCell){
-                    index++
-                }else{
-                    break
-                }
-            }
-          
-            selectedCellArray.removeAtIndex(index)
+            selectedCells.removeValueForKey(objId)
             
-            
+        }else{
+            selectedCell.accessoryType = .Checkmark
+            selectedCells[objId] = friends[indexPath.row]
         }
-        self.tableView(tableView, cellForRowAtIndexPath: indexPath)
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
+        
+    
         
         
     }
@@ -80,34 +72,25 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("friend") as? FriendTableViewCell ?? FriendTableViewCell()
-        var round = 0
         var friend: AnyObject = self.friends[indexPath.row]
         
  
         cell.firstNameLabel.text = friend["firstName"] as? String
 
         cell.lastNameLabel.text = friend["lastName"] as? String
-        println(selectedCellArray)
-        round++
-        var hasFound = false
-        if (self.checkSelectedArray(selectedCellArray, target: cell)){
+    
+     
+        if (selectedCells[friend.objectId] != nil){
             cell.accessoryType = .Checkmark
         }else{
             cell.accessoryType = .None
         }
-        
         cell.firstNameLabel.sizeToFit()
         cell.lastNameLabel.sizeToFit()
         return cell
     }
-    func checkSelectedArray(selectedArray:[FriendTableViewCell], target:FriendTableViewCell) -> Bool{
-        for cell in selectedCellArray{
-            if cell.isEqual(target){
-                return true
-            }
-        }
-        return false
-    }
+
+    
 
     
  

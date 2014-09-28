@@ -473,6 +473,9 @@
                                 <state key="normal" title="Include Participants">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="e1B-jr-NMO" kind="push" id="Dmh-qf-zRH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3P3-sv-Xqs">
                                 <rect key="frame" x="112" y="423" width="46" height="30"/>
@@ -495,7 +498,7 @@
             </objects>
             <point key="canvasLocation" x="1231" y="785"/>
         </scene>
-        <!--Friends Table View Controller-->
+        <!--Friends-->
         <scene sceneID="Ikf-QW-h67">
             <objects>
                 <tableViewController id="e1B-jr-NMO" customClass="FriendsTableViewController" customModule="Split" customModuleProvider="target" sceneMemberID="viewController">
@@ -534,7 +537,17 @@
                             <outlet property="delegate" destination="e1B-jr-NMO" id="eTJ-bb-JXu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="krv-50-jjl"/>
+                    <navigationItem key="navigationItem" title="Friends" id="krv-50-jjl">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="MqY-zf-Aix">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SyT-VU-d1b">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCf-8e-cal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -551,7 +564,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="IP3-yy-aRQ" kind="relationship" relationship="rootViewController" id="1Qd-qP-hPe"/>
+                        <segue destination="IP3-yy-aRQ" kind="relationship" relationship="rootViewController" id="qJE-De-1Yf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRX-7X-bQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
