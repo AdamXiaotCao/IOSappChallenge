@@ -10,8 +10,10 @@ import UIKit
 
 class EventCellTableViewCell: UITableViewCell {
 
+   
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
