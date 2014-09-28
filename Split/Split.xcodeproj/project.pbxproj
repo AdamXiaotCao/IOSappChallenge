@@ -10,6 +10,34 @@
 		581A353919D892D000298C1C /* MakePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A353819D892D000298C1C /* MakePaymentViewController.swift */; };
 		5847612419D8037900B752A6 /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5847612319D8037900B752A6 /* EventDetailTableViewController.swift */; };
 		5847612619D804CC00B752A6 /* EventDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5847612519D804CC00B752A6 /* EventDetailTableViewCell.swift */; };
+		5853D9D319D89F160095BA29 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5853D9A319D89F160095BA29 /* Bolts.framework */; };
+		5853D9D419D89F160095BA29 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5853D9A419D89F160095BA29 /* FacebookSDK.framework */; };
+		5853D9D519D89F160095BA29 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5853D9A619D89F160095BA29 /* FBAudienceNetwork.framework */; };
+		5853D9D619D89F160095BA29 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9A719D89F160095BA29 /* README.txt */; };
+		5853D9D719D89F160095BA29 /* AdUnitsSample-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9AB19D89F160095BA29 /* AdUnitsSample-Info.plist */; };
+		5853D9D819D89F160095BA29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5853D9AE19D89F160095BA29 /* AppDelegate.m */; };
+		5853D9D919D89F160095BA29 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9AF19D89F160095BA29 /* Default-568h@2x.png */; };
+		5853D9DA19D89F160095BA29 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9B019D89F160095BA29 /* Default.png */; };
+		5853D9DB19D89F160095BA29 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9B119D89F160095BA29 /* Default@2x.png */; };
+		5853D9DC19D89F160095BA29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9B219D89F160095BA29 /* InfoPlist.strings */; };
+		5853D9DD19D89F160095BA29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5853D9B319D89F160095BA29 /* main.m */; };
+		5853D9DE19D89F160095BA29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5853D9B519D89F160095BA29 /* ViewController.m */; };
+		5853D9DF19D89F160095BA29 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9B619D89F160095BA29 /* ViewController.xib */; };
+		5853D9E019D89F160095BA29 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9BA19D89F160095BA29 /* ReadMe.txt */; };
+		5853D9E119D89F160095BA29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5853D9BE19D89F160095BA29 /* AppDelegate.m */; };
+		5853D9E219D89F160095BA29 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9BF19D89F160095BA29 /* Images.xcassets */; };
+		5853D9E319D89F160095BA29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9C019D89F160095BA29 /* InfoPlist.strings */; };
+		5853D9E419D89F160095BA29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5853D9C119D89F160095BA29 /* main.m */; };
+		5853D9E519D89F160095BA29 /* NativeAdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5853D9C319D89F160095BA29 /* NativeAdCell.m */; };
+		5853D9E619D89F160095BA29 /* NativeAdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9C419D89F160095BA29 /* NativeAdCell.xib */; };
+		5853D9E719D89F160095BA29 /* NativeAdSample-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9C519D89F160095BA29 /* NativeAdSample-Info.plist */; };
+		5853D9E819D89F160095BA29 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5853D9C819D89F160095BA29 /* TableViewController.m */; };
+		5853D9E919D89F160095BA29 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9C919D89F160095BA29 /* TableViewController.xib */; };
+		5853D9EA19D89F160095BA29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5853D9CB19D89F160095BA29 /* ViewController.m */; };
+		5853D9EB19D89F160095BA29 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9CC19D89F160095BA29 /* ViewController.xib */; };
+		5853D9EC19D89F160095BA29 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9D019D89F160095BA29 /* ReadMe.txt */; };
+		5853D9ED19D89F160095BA29 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9D119D89F160095BA29 /* LICENSE */; };
+		5853D9EE19D89F160095BA29 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5853D9D219D89F160095BA29 /* README.txt */; };
 		587B23D719D66FFC00E1F198 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B23D619D66FFC00E1F198 /* CoreData.framework */; };
 		587B23D919D6716D00E1F198 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B23D819D6716D00E1F198 /* AudioToolbox.framework */; };
 		587B23DB19D6717600E1F198 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B23DA19D6717600E1F198 /* CFNetwork.framework */; };
@@ -49,6 +77,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5853D9F019D89F160095BA29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5853D9B719D89F160095BA29 /* AdUnitsSample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 58D92C4418C750E10090E7E2;
+			remoteInfo = AdUnitsSample;
+		};
+		5853D9F319D89F160095BA29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5853D9CD19D89F160095BA29 /* NativeAdSample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 58D92D1E18C7A6100090E7E2;
+			remoteInfo = NativeAdSample;
+		};
 		58FD41F819D66B5100BFBE35 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 58FD41DA19D66B5100BFBE35 /* Project object */;
@@ -62,6 +104,44 @@
 		581A353819D892D000298C1C /* MakePaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakePaymentViewController.swift; sourceTree = "<group>"; };
 		5847612319D8037900B752A6 /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
 		5847612519D804CC00B752A6 /* EventDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewCell.swift; sourceTree = "<group>"; };
+		5853D9A319D89F160095BA29 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		5853D9A419D89F160095BA29 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		5853D9A619D89F160095BA29 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
+		5853D9A719D89F160095BA29 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		5853D9AB19D89F160095BA29 /* AdUnitsSample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AdUnitsSample-Info.plist"; sourceTree = "<group>"; };
+		5853D9AC19D89F160095BA29 /* AdUnitsSample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AdUnitsSample-Prefix.pch"; sourceTree = "<group>"; };
+		5853D9AD19D89F160095BA29 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5853D9AE19D89F160095BA29 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5853D9AF19D89F160095BA29 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5853D9B019D89F160095BA29 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		5853D9B119D89F160095BA29 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		5853D9B219D89F160095BA29 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		5853D9B319D89F160095BA29 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5853D9B419D89F160095BA29 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5853D9B519D89F160095BA29 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5853D9B619D89F160095BA29 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		5853D9B719D89F160095BA29 /* AdUnitsSample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AdUnitsSample.xcodeproj; sourceTree = "<group>"; };
+		5853D9BA19D89F160095BA29 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		5853D9BD19D89F160095BA29 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5853D9BE19D89F160095BA29 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5853D9BF19D89F160095BA29 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5853D9C019D89F160095BA29 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		5853D9C119D89F160095BA29 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5853D9C219D89F160095BA29 /* NativeAdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeAdCell.h; sourceTree = "<group>"; };
+		5853D9C319D89F160095BA29 /* NativeAdCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeAdCell.m; sourceTree = "<group>"; };
+		5853D9C419D89F160095BA29 /* NativeAdCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdCell.xib; sourceTree = "<group>"; };
+		5853D9C519D89F160095BA29 /* NativeAdSample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NativeAdSample-Info.plist"; sourceTree = "<group>"; };
+		5853D9C619D89F160095BA29 /* NativeAdSample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NativeAdSample-Prefix.pch"; sourceTree = "<group>"; };
+		5853D9C719D89F160095BA29 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		5853D9C819D89F160095BA29 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		5853D9C919D89F160095BA29 /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		5853D9CA19D89F160095BA29 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5853D9CB19D89F160095BA29 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5853D9CC19D89F160095BA29 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		5853D9CD19D89F160095BA29 /* NativeAdSample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NativeAdSample.xcodeproj; sourceTree = "<group>"; };
+		5853D9D019D89F160095BA29 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		5853D9D119D89F160095BA29 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		5853D9D219D89F160095BA29 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		587B23D619D66FFC00E1F198 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		587B23D819D6716D00E1F198 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		587B23DA19D6717600E1F198 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -107,7 +187,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5853D9D319D89F160095BA29 /* Bolts.framework in Frameworks */,
 				587B23EB19D671CE00E1F198 /* SystemConfiguration.framework in Frameworks */,
+				5853D9D519D89F160095BA29 /* FBAudienceNetwork.framework in Frameworks */,
 				587B23E919D671C500E1F198 /* StoreKit.framework in Frameworks */,
 				587B23E719D671BE00E1F198 /* Security.framework in Frameworks */,
 				587B23E519D671B000E1F198 /* QuartzCore.framework in Frameworks */,
@@ -119,6 +201,7 @@
 				587B23D919D6716D00E1F198 /* AudioToolbox.framework in Frameworks */,
 				587B23D719D66FFC00E1F198 /* CoreData.framework in Frameworks */,
 				58FD421119D66BB900BFBE35 /* Parse.framework in Frameworks */,
+				5853D9D419D89F160095BA29 /* FacebookSDK.framework in Frameworks */,
 				58FD420F19D66BB900BFBE35 /* Bolts.framework in Frameworks */,
 				58FD421319D66BB900BFBE35 /* ParseFacebookUtils.framework in Frameworks */,
 			);
@@ -137,9 +220,119 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5853D9A219D89F160095BA29 /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				5853D9A319D89F160095BA29 /* Bolts.framework */,
+				5853D9A419D89F160095BA29 /* FacebookSDK.framework */,
+				5853D9A519D89F160095BA29 /* FBAudienceNetwork */,
+				5853D9D119D89F160095BA29 /* LICENSE */,
+				5853D9D219D89F160095BA29 /* README.txt */,
+			);
+			path = FacebookSDK;
+			sourceTree = "<group>";
+		};
+		5853D9A519D89F160095BA29 /* FBAudienceNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				5853D9A619D89F160095BA29 /* FBAudienceNetwork.framework */,
+				5853D9A719D89F160095BA29 /* README.txt */,
+				5853D9A819D89F160095BA29 /* Samples */,
+			);
+			path = FBAudienceNetwork;
+			sourceTree = "<group>";
+		};
+		5853D9A819D89F160095BA29 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				5853D9A919D89F160095BA29 /* AdUnitsSample */,
+				5853D9BB19D89F160095BA29 /* NativeAdSample */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
+		5853D9A919D89F160095BA29 /* AdUnitsSample */ = {
+			isa = PBXGroup;
+			children = (
+				5853D9AA19D89F160095BA29 /* AdUnitsSample */,
+				5853D9B719D89F160095BA29 /* AdUnitsSample.xcodeproj */,
+				5853D9BA19D89F160095BA29 /* ReadMe.txt */,
+			);
+			path = AdUnitsSample;
+			sourceTree = "<group>";
+		};
+		5853D9AA19D89F160095BA29 /* AdUnitsSample */ = {
+			isa = PBXGroup;
+			children = (
+				5853D9AB19D89F160095BA29 /* AdUnitsSample-Info.plist */,
+				5853D9AC19D89F160095BA29 /* AdUnitsSample-Prefix.pch */,
+				5853D9AD19D89F160095BA29 /* AppDelegate.h */,
+				5853D9AE19D89F160095BA29 /* AppDelegate.m */,
+				5853D9AF19D89F160095BA29 /* Default-568h@2x.png */,
+				5853D9B019D89F160095BA29 /* Default.png */,
+				5853D9B119D89F160095BA29 /* Default@2x.png */,
+				5853D9B219D89F160095BA29 /* InfoPlist.strings */,
+				5853D9B319D89F160095BA29 /* main.m */,
+				5853D9B419D89F160095BA29 /* ViewController.h */,
+				5853D9B519D89F160095BA29 /* ViewController.m */,
+				5853D9B619D89F160095BA29 /* ViewController.xib */,
+			);
+			path = AdUnitsSample;
+			sourceTree = "<group>";
+		};
+		5853D9B819D89F160095BA29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5853D9F119D89F160095BA29 /* AdUnitsSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5853D9BB19D89F160095BA29 /* NativeAdSample */ = {
+			isa = PBXGroup;
+			children = (
+				5853D9BC19D89F160095BA29 /* NativeAdSample */,
+				5853D9CD19D89F160095BA29 /* NativeAdSample.xcodeproj */,
+				5853D9D019D89F160095BA29 /* ReadMe.txt */,
+			);
+			path = NativeAdSample;
+			sourceTree = "<group>";
+		};
+		5853D9BC19D89F160095BA29 /* NativeAdSample */ = {
+			isa = PBXGroup;
+			children = (
+				5853D9BD19D89F160095BA29 /* AppDelegate.h */,
+				5853D9BE19D89F160095BA29 /* AppDelegate.m */,
+				5853D9BF19D89F160095BA29 /* Images.xcassets */,
+				5853D9C019D89F160095BA29 /* InfoPlist.strings */,
+				5853D9C119D89F160095BA29 /* main.m */,
+				5853D9C219D89F160095BA29 /* NativeAdCell.h */,
+				5853D9C319D89F160095BA29 /* NativeAdCell.m */,
+				5853D9C419D89F160095BA29 /* NativeAdCell.xib */,
+				5853D9C519D89F160095BA29 /* NativeAdSample-Info.plist */,
+				5853D9C619D89F160095BA29 /* NativeAdSample-Prefix.pch */,
+				5853D9C719D89F160095BA29 /* TableViewController.h */,
+				5853D9C819D89F160095BA29 /* TableViewController.m */,
+				5853D9C919D89F160095BA29 /* TableViewController.xib */,
+				5853D9CA19D89F160095BA29 /* ViewController.h */,
+				5853D9CB19D89F160095BA29 /* ViewController.m */,
+				5853D9CC19D89F160095BA29 /* ViewController.xib */,
+			);
+			path = NativeAdSample;
+			sourceTree = "<group>";
+		};
+		5853D9CE19D89F160095BA29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5853D9F419D89F160095BA29 /* NativeAdSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		58FD41D919D66B5100BFBE35 = {
 			isa = PBXGroup;
 			children = (
+				5853D9A219D89F160095BA29 /* FacebookSDK */,
 				587B23EA19D671CE00E1F198 /* SystemConfiguration.framework */,
 				587B23E819D671C500E1F198 /* StoreKit.framework */,
 				587B23E619D671BD00E1F198 /* Security.framework */,
@@ -299,6 +492,16 @@
 			mainGroup = 58FD41D919D66B5100BFBE35;
 			productRefGroup = 58FD41E319D66B5100BFBE35 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5853D9B819D89F160095BA29 /* Products */;
+					ProjectRef = 5853D9B719D89F160095BA29 /* AdUnitsSample.xcodeproj */;
+				},
+				{
+					ProductGroup = 5853D9CE19D89F160095BA29 /* Products */;
+					ProjectRef = 5853D9CD19D89F160095BA29 /* NativeAdSample.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				58FD41E119D66B5100BFBE35 /* Split */,
@@ -307,14 +510,48 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		5853D9F119D89F160095BA29 /* AdUnitsSample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = AdUnitsSample.app;
+			remoteRef = 5853D9F019D89F160095BA29 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5853D9F419D89F160095BA29 /* NativeAdSample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = NativeAdSample.app;
+			remoteRef = 5853D9F319D89F160095BA29 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		58FD41E019D66B5100BFBE35 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5853D9DF19D89F160095BA29 /* ViewController.xib in Resources */,
+				5853D9EB19D89F160095BA29 /* ViewController.xib in Resources */,
+				5853D9DB19D89F160095BA29 /* Default@2x.png in Resources */,
 				58FD41ED19D66B5100BFBE35 /* Main.storyboard in Resources */,
+				5853D9E319D89F160095BA29 /* InfoPlist.strings in Resources */,
+				5853D9E719D89F160095BA29 /* NativeAdSample-Info.plist in Resources */,
 				58FD41F219D66B5100BFBE35 /* LaunchScreen.xib in Resources */,
+				5853D9D619D89F160095BA29 /* README.txt in Resources */,
 				58FD41EF19D66B5100BFBE35 /* Images.xcassets in Resources */,
+				5853D9DA19D89F160095BA29 /* Default.png in Resources */,
+				5853D9E019D89F160095BA29 /* ReadMe.txt in Resources */,
+				5853D9ED19D89F160095BA29 /* LICENSE in Resources */,
+				5853D9D719D89F160095BA29 /* AdUnitsSample-Info.plist in Resources */,
+				5853D9E219D89F160095BA29 /* Images.xcassets in Resources */,
+				5853D9EE19D89F160095BA29 /* README.txt in Resources */,
+				5853D9E619D89F160095BA29 /* NativeAdCell.xib in Resources */,
+				5853D9DC19D89F160095BA29 /* InfoPlist.strings in Resources */,
+				5853D9D919D89F160095BA29 /* Default-568h@2x.png in Resources */,
+				5853D9EC19D89F160095BA29 /* ReadMe.txt in Resources */,
+				5853D9E919D89F160095BA29 /* TableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,21 +571,29 @@
 			files = (
 				58FD41EA19D66B5100BFBE35 /* ViewController.swift in Sources */,
 				587B23FF19D7B39E00E1F198 /* AllEventsCollectionViewController.swift in Sources */,
+				5853D9D819D89F160095BA29 /* AppDelegate.m in Sources */,
 				58FD421B19D66CCA00BFBE35 /* SideBarTableViewController.swift in Sources */,
 				587B23FB19D7A60100E1F198 /* NewEventViewController.swift in Sources */,
 				587B240319D7BAF900E1F198 /* FriendTableViewCell.swift in Sources */,
 				587B240119D7B3AD00E1F198 /* FriendsTableViewController.swift in Sources */,
+				5853D9E819D89F160095BA29 /* TableViewController.m in Sources */,
 				587B23ED19D67D5200E1F198 /* SideBar.swift in Sources */,
+				5853D9DD19D89F160095BA29 /* main.m in Sources */,
 				587B23F119D7808200E1F198 /* LoginViewController.swift in Sources */,
 				581A353919D892D000298C1C /* MakePaymentViewController.swift in Sources */,
 				587B240B19D7C02D00E1F198 /* EventEntryTableViewCell.swift in Sources */,
 				587B240D19D7C29700E1F198 /* EventEntryUITableView.swift in Sources */,
 				5847612419D8037900B752A6 /* EventDetailTableViewController.swift in Sources */,
+				5853D9DE19D89F160095BA29 /* ViewController.m in Sources */,
+				5853D9E519D89F160095BA29 /* NativeAdCell.m in Sources */,
 				587B23F919D796E100E1F198 /* EventCellTableViewCell.swift in Sources */,
 				587B240719D7BFB200E1F198 /* AddEntryViewController.swift in Sources */,
 				587B23F519D7832800E1F198 /* EventTableViewController.swift in Sources */,
 				58FD41E819D66B5100BFBE35 /* AppDelegate.swift in Sources */,
 				5847612619D804CC00B752A6 /* EventDetailTableViewCell.swift in Sources */,
+				5853D9E419D89F160095BA29 /* main.m in Sources */,
+				5853D9E119D89F160095BA29 /* AppDelegate.m in Sources */,
+				5853D9EA19D89F160095BA29 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +721,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.4.1",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
 				);
 				INFOPLIST_FILE = Split/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -493,6 +740,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.4.1",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
 				);
 				INFOPLIST_FILE = Split/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
