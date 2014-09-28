@@ -13,11 +13,14 @@ struct Friend {
     var last_name: String
 }
 
+
 class FriendsTableViewController: UITableViewController, UITableViewDataSource {
     
     
-
+    var selectedCellArray :[FriendTableViewCell] = []
     var friends: [PFUser] = []
+
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -25,8 +28,7 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
         PFUser.logInWithUsername("harry", password: "123")
         
         var user = PFUser.currentUser()
-        var query = PFUser.query()
-        query.whereKey("friends", equalTo: user)
+        var query = user.relationForKey("friends").query()
         self.friends = query.findObjects() as [PFUser]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -45,26 +47,73 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
         return self.friends.count
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-            selectedCell = tableView(UITableView, cellForRowAtIndexPath: indexPath) as UITableViewCell
-    }
+
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("friend") as? FriendTableViewCell ?? FriendTableViewCell()
         
         var friend: AnyObject = self.friends[indexPath.row]
-
+        
+ 
         cell.firstNameLabel.text = friend["firstName"] as? String
 
         cell.lastNameLabel.text = friend["lastName"] as? String
 
-        println(friend)
+        var hasFound = false
+
+        for target in selectedCellArray {
+            println(" I am searching")
+            if (target.isEqual(cell)){
+                println("found it!!")
+                hasFound = true
+            }
+        }
+        if (hasFound){
+            println("reached here yasdfasdfo")
+            cell.accessoryType = .Checkmark
+          
+        }else{
+            println("reached here 12312yo")
+            cell.editingAccessoryType = .None
+        }
+    
         cell.firstNameLabel.sizeToFit()
         cell.lastNameLabel.sizeToFit()
         return cell
     }
 
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var  selectedCell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as FriendTableViewCell
+
+        if (selectedCell.accessoryType == UITableViewCellAccessoryType.None){
+            println("i am updating to check mark")
+            selectedCell.accessoryType = .Checkmark
+            selectedCellArray.append(selectedCell)
+        }else if (selectedCell.accessoryType == UITableViewCellAccessoryType.Checkmark){
+            println("reaching here as well")
+            selectedCell.accessoryType = .None
+            var index = 0
+            for cell in selectedCellArray{
+                if (cell != selectedCell){
+                    index++
+                }else{
+                    break
+                }
+            }
+            println (index)
+            selectedCellArray.removeAtIndex(index)
+            
+
+        }
+        tableView.reloadData()
+//        self.tableView(self.tableView, didDeselectRowAtIndexPath: indexPath)
+//        self.tableView(tableView, didDeselectRowAtIndexPath: indexPath)
+        
+        
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
