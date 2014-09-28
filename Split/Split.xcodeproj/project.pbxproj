@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		581A353919D892D000298C1C /* MakePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581A353819D892D000298C1C /* MakePaymentViewController.swift */; };
+		582A872119D8CC730002D8F5 /* OverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A872019D8CC730002D8F5 /* OverviewTableViewController.swift */; };
 		5847612419D8037900B752A6 /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5847612319D8037900B752A6 /* EventDetailTableViewController.swift */; };
 		5847612619D804CC00B752A6 /* EventDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5847612519D804CC00B752A6 /* EventDetailTableViewCell.swift */; };
 		587B23D719D66FFC00E1F198 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B23D619D66FFC00E1F198 /* CoreData.framework */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		581A353819D892D000298C1C /* MakePaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakePaymentViewController.swift; sourceTree = "<group>"; };
+		582A872019D8CC730002D8F5 /* OverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewTableViewController.swift; sourceTree = "<group>"; };
 		5847612319D8037900B752A6 /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
 		5847612519D804CC00B752A6 /* EventDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewCell.swift; sourceTree = "<group>"; };
 		587B23D619D66FFC00E1F198 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -177,6 +179,7 @@
 				587B240619D7BFB200E1F198 /* AddEntryViewController.swift */,
 				587B240C19D7C29700E1F198 /* EventEntryUITableView.swift */,
 				5847612319D8037900B752A6 /* EventDetailTableViewController.swift */,
+				582A872019D8CC730002D8F5 /* OverviewTableViewController.swift */,
 				587B240A19D7C02D00E1F198 /* EventEntryTableViewCell.swift */,
 				587B240019D7B3AD00E1F198 /* FriendsTableViewController.swift */,
 				581A353819D892D000298C1C /* MakePaymentViewController.swift */,
@@ -344,6 +347,7 @@
 				587B240B19D7C02D00E1F198 /* EventEntryTableViewCell.swift in Sources */,
 				587B240D19D7C29700E1F198 /* EventEntryUITableView.swift in Sources */,
 				5847612419D8037900B752A6 /* EventDetailTableViewController.swift in Sources */,
+				582A872119D8CC730002D8F5 /* OverviewTableViewController.swift in Sources */,
 				587B23F919D796E100E1F198 /* EventCellTableViewCell.swift in Sources */,
 				587B240719D7BFB200E1F198 /* AddEntryViewController.swift in Sources */,
 				587B23F519D7832800E1F198 /* EventTableViewController.swift in Sources */,
