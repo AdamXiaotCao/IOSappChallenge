@@ -439,6 +439,9 @@
                                 <state key="normal" title="Request Payment">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="requestPaymentButton:" destination="08n-P7-tjR" eventType="touchUpInside" id="adk-nJ-eka"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -639,7 +642,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="IP3-yy-aRQ" kind="relationship" relationship="rootViewController" id="qJE-De-1Yf"/>
+                        <segue destination="08n-P7-tjR" kind="relationship" relationship="rootViewController" id="A9J-fE-m2t"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRX-7X-bQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -652,4 +655,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="A9J-fE-m2t"/>
+    </inferredMetricsTieBreakers>
 </document>

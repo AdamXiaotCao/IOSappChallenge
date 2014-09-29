@@ -20,8 +20,28 @@ class MakePaymentViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
+
+    @IBAction func requestPaymentButton(sender: AnyObject) {
+        println("here")
+        if (SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook)){
+            println("yo")
+            let controller = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            controller.setInitialText("I am using @Split to use split bill")
+            controller.completionHandler = {
+                
+                (result:SLComposeViewControllerResult) -> Void in
+                switch result {
+                case SLComposeViewControllerResult.Cancelled:
+                    println("result: cancelled")
+                case SLComposeViewControllerResult.Done:
+                    // TODO: ADD SOME CODE FOR SUCCESS
+                    println("result: done")
+                }
+            }
+            self.presentViewController(controller, animated: true, completion: nil)
+            
+        }
     /*
     // MARK: - Navigation
 
@@ -32,4 +52,5 @@ class MakePaymentViewController: UIViewController {
     }
     */
 
+    }
 }

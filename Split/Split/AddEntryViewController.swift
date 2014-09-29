@@ -13,6 +13,7 @@ class AddEntryViewController: UIViewController {
     @IBOutlet var amountField: UITextField!
     @IBOutlet var commentField: UITextField!
     
+    @IBOutlet var payerText: UITextField!
     
     var event: PFObject = PFObject(className: "Entry");
     var participants: [PFObject] = [];
@@ -89,6 +90,11 @@ class AddEntryViewController: UIViewController {
             self.error("comment cannot be empty");
             return;
         }
+        var payer = ""
+        var hasFound = false
+//        for p in participants {
+//            if ( (p as PFUser).username)
+//        }
         var newEntry = PFObject(className: "Entry");
         newEntry["comment"] = comment;
         newEntry["payer"] = PFUser.currentUser();

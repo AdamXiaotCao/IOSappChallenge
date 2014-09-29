@@ -43,7 +43,6 @@
 		58FD41EA19D66B5100BFBE35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD41E919D66B5100BFBE35 /* ViewController.swift */; };
 		58FD41ED19D66B5100BFBE35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58FD41EB19D66B5100BFBE35 /* Main.storyboard */; };
 		58FD41EF19D66B5100BFBE35 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58FD41EE19D66B5100BFBE35 /* Images.xcassets */; };
-		58FD41F219D66B5100BFBE35 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58FD41F019D66B5100BFBE35 /* LaunchScreen.xib */; };
 		58FD41FE19D66B5100BFBE35 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD41FD19D66B5100BFBE35 /* SplitTests.swift */; };
 		58FD420F19D66BB900BFBE35 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FD420C19D66BB900BFBE35 /* Bolts.framework */; };
 		58FD421019D66BB900BFBE35 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FD420C19D66BB900BFBE35 /* Bolts.framework */; };
@@ -104,7 +103,6 @@
 		58FD41E919D66B5100BFBE35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		58FD41EC19D66B5100BFBE35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58FD41EE19D66B5100BFBE35 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		58FD41F119D66B5100BFBE35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		58FD41F719D66B5100BFBE35 /* SplitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FD41FC19D66B5100BFBE35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58FD41FD19D66B5100BFBE35 /* SplitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitTests.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 				587B23F819D796E100E1F198 /* EventCellTableViewCell.swift */,
 				587B240219D7BAF900E1F198 /* FriendTableViewCell.swift */,
 				58FD41EE19D66B5100BFBE35 /* Images.xcassets */,
-				58FD41F019D66B5100BFBE35 /* LaunchScreen.xib */,
 				58FD41E519D66B5100BFBE35 /* Supporting Files */,
 			);
 			path = Split;
@@ -339,7 +336,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				58FD41ED19D66B5100BFBE35 /* Main.storyboard in Resources */,
-				58FD41F219D66B5100BFBE35 /* LaunchScreen.xib in Resources */,
 				58FD41EF19D66B5100BFBE35 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,14 +402,6 @@
 				58FD41EC19D66B5100BFBE35 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		58FD41F019D66B5100BFBE35 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				58FD41F119D66B5100BFBE35 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -500,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -519,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
