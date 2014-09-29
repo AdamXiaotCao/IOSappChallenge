@@ -20,7 +20,10 @@ class AddEntryViewController: UIViewController {
     var individualFields: [UITextField] = [];
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 237/255.0, green: 228/255.0, blue: 217/255.0, alpha: 1)
+
         self.individualFields = [];
         var y: CGFloat = 0;
         for participant in self.participants {
