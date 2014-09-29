@@ -43,6 +43,9 @@ class AddEntryViewController: UIViewController {
     @IBAction func onAmountChanged(sender: UITextField) {
         let count = self.participants.count;
         if (sender.text.isEmpty || count == 0) {
+            for field in self.individualFields {
+                field.text = ""
+            }
             return;
         }
         let total = sender.text.toInt();

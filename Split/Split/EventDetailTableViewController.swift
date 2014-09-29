@@ -9,7 +9,9 @@
 import UIKit
 struct OutPut{
     var name: String
-    var amount: String
+    var id: String
+    var amount: Int
+    var venmoId: String
 }
 
 
@@ -59,6 +61,7 @@ class EventDetailTableViewController: UITableViewController {
         if (segue.identifier == "toCheckout"){
             var overviewController = segue.destinationViewController as OverviewTableViewController
             overviewController.outputs = self.doCalculation()
+            overviewController.entries = self.entries;
         }
     }
     
@@ -124,9 +127,37 @@ class EventDetailTableViewController: UITableViewController {
     private func doCalculation() -> [OutPut]{
        //TODO calculate the and put name and lable into a Ouput struct
         //output struct will be passed to overview controller throught segue
-        var result :[OutPut] = []
-        
-        return result
+        var user = PFUser.currentUser();
+        var userId = user.objectId;
+        var map = Dictionary<String, OutPut>();
+        for participant in self.participants {
+            if (participant.objectId == userId) {
+                continue;
+            }
+            var firstname = participant["firstName"] as String;
+            var lastname = participant["lastName"] as String;
+            map[participant.objectId] = OutPut(name:"\(firstname) \(lastname)", id:participant.objectId, amount:0, venmoId: participant["venmoId"] as String);
+        }
+        for participant in self.participants {
+            if (participant.objectId == user.objectId) {
+                continue;
+            }
+            var otherId = participant.objectId;
+            for entry in self.entries {
+                var payerId = entry["payer"].objectId;
+                var dict: Dictionary<String, Int> = entry["breakdown"] as Dictionary<String, Int>;
+                if (payerId == userId) { // participant pays you
+                    map[otherId]!.amount -= dict[otherId]! as Int;
+                } else if (payerId == otherId) { // you pay participant
+                    map[otherId]!.amount += dict[userId]! as Int;
+                }
+            }
+        }
+        var result :[OutPut] = [];
+        for (id, output) in map {
+            result.append(output);
+        }
+        return result;
     }
 
 

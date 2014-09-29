@@ -10,6 +10,7 @@ import UIKit
 
 class OverviewTableViewController: UITableViewController {
     var outputs :[OutPut] = []
+    var entries: [PFObject] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,7 +49,12 @@ class OverviewTableViewController: UITableViewController {
         return cell
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if (segue.identifier == "toPayment") {
+            var paymentController = segue.destinationViewController as MakePaymentViewController;
+            paymentController.entries = self.entries;
+            var selectedIndex = self.tableView.indexPathForSelectedRow();
+            paymentController.output = self.outputs[selectedIndex!.row];
+        }
     }
 
     /*
