@@ -47,6 +47,9 @@ class OverviewTableViewController: UITableViewController {
         cell.amountLabel.sizeToFit()
         return cell
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+    }
 
     /*
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {

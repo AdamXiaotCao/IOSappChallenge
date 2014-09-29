@@ -396,7 +396,7 @@
                                 <connections>
                                     <outlet property="amountLabel" destination="VkI-Q8-PDw" id="mXN-n3-0DK"/>
                                     <outlet property="nameLabel" destination="ukW-2i-LrO" id="ovK-S7-LMU"/>
-                                    <segue destination="08n-P7-tjR" kind="push" id="FSf-gK-a0N"/>
+                                    <segue destination="08n-P7-tjR" kind="push" identifier="toPayment" id="FSf-gK-a0N"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -409,7 +409,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLq-3i-CsU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="498" y="2219"/>
+            <point key="canvasLocation" x="498" y="2259"/>
         </scene>
         <!--Make Payment View Controller-->
         <scene sceneID="XPO-Sd-hf1">
@@ -423,12 +423,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcn-tB-QrI">
-                                <rect key="frame" x="111" y="308" width="122" height="30"/>
-                                <state key="normal" title="Request Payment">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Venmo Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWo-iX-wAs">
                                 <rect key="frame" x="49" y="173" width="137" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -436,10 +430,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FFo-Cn-v57">
-                                <rect key="frame" x="79" y="212" width="97" height="30"/>
+                                <rect key="frame" x="69" y="212" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcn-tB-QrI">
+                                <rect key="frame" x="111" y="308" width="122" height="30"/>
+                                <state key="normal" title="Request Payment">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
