@@ -7,6 +7,13 @@
 //
 
 import UIKit
+struct OutPut{
+    var name: String
+    var amount: String
+}
+
+
+
 
 class EventDetailTableViewController: UITableViewController {
 
@@ -14,7 +21,8 @@ class EventDetailTableViewController: UITableViewController {
     var event: PFObject = PFObject(className: "Event")
     var entries: [PFObject] = []
     var participants: [PFObject] = []
-
+    var outputs : [OutPut] = []
+    var query = PFUser.query()
     @IBOutlet var entriesTable: EventEntryUITableView!
     
     override func viewDidLoad() {
@@ -47,6 +55,10 @@ class EventDetailTableViewController: UITableViewController {
             addController.participants = self.participants
             addController.event = self.event
             
+        }
+        if (segue.identifier == "toCheckout"){
+            var overviewController = segue.destinationViewController as OverviewTableViewController
+            overviewController.outputs = self.doCalculation()
         }
     }
     
@@ -109,7 +121,16 @@ class EventDetailTableViewController: UITableViewController {
             return cell
         }
     }
-    
+    private func doCalculation() -> [OutPut]{
+       //TODO calculate the and put name and lable into a Ouput struct
+        //output struct will be passed to overview controller throught segue
+        var result :[OutPut] = []
+        
+        return result
+    }
+
+
+
 
     /*
     // Override to support conditional editing of the table view.

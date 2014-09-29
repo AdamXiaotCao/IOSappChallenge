@@ -28,6 +28,7 @@ struct User{
     var password: String
 }
 
+
 class EventTableViewController: UITableViewController, UITableViewDataSource {
 
     var events : [AnyObject] = []
@@ -112,7 +113,7 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.events.count
     }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "eventToEventDetail") {
             var selectedIndex = self.tableView.indexPathForSelectedRow();
@@ -120,6 +121,7 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
             detailController.event = self.events[selectedIndex!.row] as PFObject;
             
         }
+
     }
 
     // Override to support conditional editing of the table view.
