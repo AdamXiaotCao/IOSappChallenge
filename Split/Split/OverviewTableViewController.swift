@@ -43,6 +43,8 @@ class OverviewTableViewController: UITableViewController {
         var output = outputs[indexPath.row] as OutPut
         cell.nameLabel.text = output.name
         cell.amountLabel.text = String(output.amount)
+        cell.nameLabel.sizeToFit()
+        cell.amountLabel.sizeToFit()
         return cell
     }
 
