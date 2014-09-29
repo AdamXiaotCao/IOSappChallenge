@@ -295,6 +295,15 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3E-AD-a6P">
+                                            <rect key="frame" x="237" y="142" width="66" height="30"/>
+                                            <state key="normal" title="Checkout">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="2Kf-1i-zdN" kind="push" id="bIq-Wh-hM7"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -362,11 +371,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OfL-oY-z0Y">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OfL-oY-z0Y" customClass="OverviewTableViewCell" customModule="Split" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OfL-oY-z0Y" id="7gH-sN-hf3">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkI-Q8-PDw">
+                                            <rect key="frame" x="232" y="13" width="60" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukW-2i-LrO">
+                                            <rect key="frame" x="21" y="14" width="96" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="amountLabel" destination="VkI-Q8-PDw" id="mXN-n3-0DK"/>
+                                    <outlet property="nameLabel" destination="ukW-2i-LrO" id="ovK-S7-LMU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -374,10 +401,11 @@
                             <outlet property="delegate" destination="2Kf-1i-zdN" id="xgV-Fb-qaO"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="gFe-sx-9px"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLq-3i-CsU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="548" y="2112"/>
+            <point key="canvasLocation" x="498" y="2219"/>
         </scene>
         <!--Make Payment View Controller-->
         <scene sceneID="XPO-Sd-hf1">
