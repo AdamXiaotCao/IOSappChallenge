@@ -7,9 +7,13 @@
 //
 
 import UIKit
+struct output{
+    var name: String
+    var amount :Int
+}
 
 class OverviewTableViewController: UITableViewController {
-
+    var entries: [output] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,13 +34,20 @@ class OverviewTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return entries.count
+    }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("overviewCell", forIndexPath: indexPath) as OverviewTableViewCell ?? OverviewTableViewCell()
+        var output = entries[indexPath.row]
+        cell.nameLabel.text = output.name
+        cell.amountLabel.text = String(output.amount)
+        return cell
     }
 
     /*
