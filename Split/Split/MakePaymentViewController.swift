@@ -17,6 +17,8 @@ class MakePaymentViewController: UIViewController {
     var output:OutPut = OutPut(name: "", id: "", amount: 0, venmoId: "");
     var entries:[PFObject] = []
     override func viewDidLoad() {
+        self.view.backgroundColor = UIColor(red: 237/255.0, green: 228/255.0, blue: 217/255.0, alpha: 1)
+
         super.viewDidLoad()
         self.venmoIdField.text = "\(self.output.venmoId)";
         self.amountField.text = "\(self.output.amount)";

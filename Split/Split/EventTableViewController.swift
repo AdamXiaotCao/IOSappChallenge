@@ -35,6 +35,8 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
     
     
     override func viewDidLoad() {
+        self.view.backgroundColor = UIColor(red: 237/255.0, green: 228/255.0, blue: 217/255.0, alpha: 1)
+
         super.viewDidLoad()
         var user = PFUser.currentUser();
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
