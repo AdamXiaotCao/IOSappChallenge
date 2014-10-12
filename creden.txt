@@ -6,3 +6,18 @@ ID:
 Access Token:
 
 7Gx5rkdvQUbJugxDcQYAX4ZwQHq65E5W
+
+
+
+Split parse credentials:
+
+Before continuing, select your Parse app from the menu at the right. These steps are for your "Split" app.
+
+Then paste the following inside the application:didFinishLaunchingWithOptions: function:
+
+[Parse setApplicationId:@"pyHHfiLUzX621R7dExCksbwQ0NUk9cxLBI5gmOCc"
+              clientKey:@"pbyVl0qNaPPik7fFivKH2qZxL26ydTpPMw0xboc6"];
+And to track statistics around application opens, add the following below that:
+
+[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+Compile and run!
