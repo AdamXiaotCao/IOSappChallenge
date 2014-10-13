@@ -86,7 +86,7 @@ class AddEntryViewController: UIViewController {
         }
         for field in self.individualFields {
             let p = field.text;
-            if (p.isEmpty || p.toInt() == nil) {
+            if (p.isEmpty || p.toInt() == nil || p.toInt() > amountString.toInt() ) {
                 self.error("illegal amount");
                 return;
             }
