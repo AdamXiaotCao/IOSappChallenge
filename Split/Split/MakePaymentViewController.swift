@@ -24,6 +24,14 @@ class MakePaymentViewController: UIViewController {
         self.amountField.text = "\(self.output.amount)";
         self.descriptionField.text = "Paying \(self.output.name)";
         // Do any additional setup after loading the view.
+        
+        //decide the payment method here: api or app switch
+        if (!Venmo.isVenmoAppInstalled()){
+            Venmo.sharedInstance().defaultTransactionMethod = VENTransactionMethod.API
+        }
+        else {
+            Venmo.sharedInstance().defaultTransactionMethod = VENTransactionMethod.AppSwitch
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,9 +72,31 @@ class MakePaymentViewController: UIViewController {
     }
 
     @IBAction func requestPaymentButton(sender: AnyObject) {
-        println("here")
+        //use Venmo to request a payemnt
+        if (self.output.amount < 0){
+            Venmo.sharedInstance().requestPermissions(["make_payments","access_profile"], withCompletionHandler: {
+                success, error in
+                if success {
+                    
+                } else {
+                    println(error.localizedDescription)
+                }
+            })
+        }
+        //to make a payment
+        else if (self.output.amount > 0){
+            Venmo.sharedInstance().sendRequestTo(self.output.venmoId, amount: 42, note: self.output.name) { (transaction, success, error) -> Void in
+                if (success){
+                    NSLog("Transaction succeeded!")
+                }
+                else{
+                    NSLog("Transaction failed with error")
+                    //println(error.localizedDescription)
+                }
+            }
+
+        }
         if (SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook)){
-            println("yo")
             let controller = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
             controller.setInitialText("I am using @Split to use split bill")
             controller.completionHandler = {
