@@ -15,8 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        Venmo.startWithAppId("1997", secret: "6434T49L9WE9yY7avutmJpTtXntEwDuQ", name: "Split")
         Parse.setApplicationId("Rg16CRiVWrGP4k3NCgAxfPN62tKmYHYECTRxfsGp", clientKey: "DJVEhHZsskdIavGrherZGZXcF5KvO5GEuThg9S1I")
         return true
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String, annotation: AnyObject?) -> Bool {
+        if (Venmo.sharedInstance().handleOpenURL(url)){
+            return true
+        }
+        else {
+            return false
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {
