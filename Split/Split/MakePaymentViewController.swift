@@ -72,20 +72,20 @@ class MakePaymentViewController: UIViewController {
     }
 
     @IBAction func requestPaymentButton(sender: AnyObject) {
+        var a :UInt  = UInt(self.output.amount)
+ 
+        Venmo.sharedInstance().requestPermissions(["make_payments","access_profile"], withCompletionHandler: {
+            success, error in
+            if success {
+                
+            } else {
+                println(error.localizedDescription)
+            }
+        })
         //use Venmo to request a payemnt
         if (self.output.amount < 0){
-            Venmo.sharedInstance().requestPermissions(["make_payments","access_profile"], withCompletionHandler: {
-                success, error in
-                if success {
-                    
-                } else {
-                    println(error.localizedDescription)
-                }
-            })
-        }
-        //to make a payment
-        else if (self.output.amount > 0){
-            Venmo.sharedInstance().sendRequestTo(self.output.venmoId, amount: 42, note: self.output.name) { (transaction, success, error) -> Void in
+            
+            Venmo.sharedInstance().sendRequestTo(self.output.venmoId, amount: a, note: "yo", completionHandler: { (transaction, success, error) -> Void in
                 if (success){
                     NSLog("Transaction succeeded!")
                 }
@@ -93,7 +93,24 @@ class MakePaymentViewController: UIViewController {
                     NSLog("Transaction failed with error")
                     //println(error.localizedDescription)
                 }
-            }
+            })
+            
+
+        }
+        //to make a payment
+       
+        else if (self.output.amount > 0){
+            Venmo.sharedInstance().sendPaymentTo(self.output.venmoId, amount: a, note: "yo", completionHandler: { (transaction, success, error) -> Void in
+                if (success){
+                    NSLog("Transaction succeeded!")
+                }
+                else{
+                    NSLog("Transaction failed with error")
+                    //println(error.localizedDescription)
+                }
+            })
+            
+
 
         }
         if (SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook)){
