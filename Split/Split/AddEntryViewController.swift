@@ -25,6 +25,8 @@ class AddEntryViewController: UIViewController {
         self.view.backgroundColor = UIColor(red: 237/255.0, green: 228/255.0, blue: 217/255.0, alpha: 1)
 
         self.individualFields = [];
+        
+        
         var y: CGFloat = 0;
         for participant in self.participants {
             let yLoc = 230 + y * 40;
@@ -36,6 +38,7 @@ class AddEntryViewController: UIViewController {
             label.text = "\(firstName) \(lastName)";
             self.view.addSubview(label);
             var field: UITextField = UITextField(frame: CGRect(x: xLoc2, y: yLoc, width: 100, height: 21));
+            field.keyboardType = UIKeyboardType.NumberPad;
             field.borderStyle = UITextBorderStyle.RoundedRect;
             self.individualFields.append(field);
             self.view.addSubview(field)
@@ -47,7 +50,9 @@ class AddEntryViewController: UIViewController {
         let count = self.participants.count;
         if (sender.text.isEmpty || count == 0) {
             for field in self.individualFields {
+                
                 field.text = ""
+               
             }
             return;
         }
@@ -76,7 +81,9 @@ class AddEntryViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
-    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
 
     @IBAction func onCreate(sender: UIBarButtonItem) {
         let amountString = self.amountField.text;
@@ -91,6 +98,7 @@ class AddEntryViewController: UIViewController {
                 return;
             }
         }
+        
         let comment = self.commentField.text;
         if (comment.isEmpty) {
             self.error("comment cannot be empty");

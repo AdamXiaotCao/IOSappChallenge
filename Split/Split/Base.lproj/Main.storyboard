@@ -48,7 +48,10 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Mbo-KV-F8b" appends="YES" id="M4o-1N-FUQ"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Login" id="lAH-OY-LWl">
@@ -66,6 +69,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSV-83-Gxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Mbo-KV-F8b"/>
             </objects>
             <point key="canvasLocation" x="498" y="70"/>
         </scene>

@@ -75,7 +75,7 @@ class EventTableViewController: UITableViewController, UITableViewDataSource {
     @IBAction func onSync(sender: UIBarButtonItem) {
         self.updateEvents(PFUser.currentUser());
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCellWithIdentifier("event") as? EventCellTableViewCell ?? EventCellTableViewCell()

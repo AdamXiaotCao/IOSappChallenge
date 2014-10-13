@@ -29,6 +29,9 @@ class LoginViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
     
     @IBAction func onLogin(sender: UIButton) {
         PFUser.logInWithUsernameInBackground(self.usernameField.text, password: self.passwordField.text) {
