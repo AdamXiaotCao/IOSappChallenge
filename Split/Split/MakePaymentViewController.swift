@@ -13,18 +13,25 @@ class MakePaymentViewController: UIViewController {
     @IBOutlet var venmoIdField: UITextField!
     @IBOutlet var amountField: UITextField!
     @IBOutlet var descriptionField: UILabel!
+    @IBOutlet var paymentButton: UIButton!
     
     var output:OutPut = OutPut(name: "", id: "", amount: 0, venmoId: "");
     var entries:[PFObject] = []
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor(red: 237/255.0, green: 228/255.0, blue: 217/255.0, alpha: 1)
-
+        amountField.keyboardType = UIKeyboardType.NumberPad
         super.viewDidLoad()
         self.venmoIdField.text = "\(self.output.venmoId)";
         self.amountField.text = "\(self.output.amount)";
         self.descriptionField.text = "Paying \(self.output.name)";
-        // Do any additional setup after loading the view.
         
+        //set the the button name according to the amount
+        if (self.output.amount >= 0){
+            paymentButton.setTitle("Send Payment", forState: .Normal)
+        }
+        else {
+            paymentButton.setTitle("Request Payment", forState: .Normal)
+        }
         //decide the payment method here: api or app switch
         if (!Venmo.isVenmoAppInstalled()){
             Venmo.sharedInstance().defaultTransactionMethod = VENTransactionMethod.API
@@ -72,48 +79,58 @@ class MakePaymentViewController: UIViewController {
     }
 
     @IBAction func requestPaymentButton(sender: AnyObject) {
-        var a :UInt  = UInt(self.output.amount)
+        var tempAmount = amountField.text.toInt()
+        var amount: UInt
+        if (tempAmount > 0){
+            amount = UInt(tempAmount!)
+        }
+        else{
+            amount = UInt(abs(tempAmount!))
+        }
+        var venmoId = venmoIdField.text
+        var description = descriptionField.text
  
         Venmo.sharedInstance().requestPermissions(["make_payments","access_profile"], withCompletionHandler: {
             success, error in
             if success {
+                //use Venmo to request a payemnt
+                if (tempAmount! < 0){
+                    
+                    Venmo.sharedInstance().sendRequestTo(venmoId, amount: amount, note: description, completionHandler: { (transaction, success, error) -> Void in
+                        if (success){
+                            NSLog("Transaction succeeded!")
+                        }
+                        else{
+                            NSLog("Transaction failed with error")
+                            //println(error.localizedDescription)
+                        }
+                    })
+                    
+                    
+                }
+                    //to make a payment
+                    
+                else if (tempAmount! > 0){
+                    Venmo.sharedInstance().sendPaymentTo(venmoId, amount: amount, note: description, completionHandler: { (transaction, success, error) -> Void in
+                        if (success){
+                            NSLog("Transaction succeeded!")
+                        }
+                        else{
+                            NSLog("Transaction failed with error")
+                            //println(error.localizedDescription)
+                        }
+                    })
+                    
+                    
+                    
+                }
+
                 
             } else {
                 println(error.localizedDescription)
             }
         })
-        //use Venmo to request a payemnt
-        if (self.output.amount < 0){
-            
-            Venmo.sharedInstance().sendRequestTo(self.output.venmoId, amount: a, note: "yo", completionHandler: { (transaction, success, error) -> Void in
-                if (success){
-                    NSLog("Transaction succeeded!")
-                }
-                else{
-                    NSLog("Transaction failed with error")
-                    //println(error.localizedDescription)
-                }
-            })
-            
-
-        }
-        //to make a payment
-       
-        else if (self.output.amount > 0){
-            Venmo.sharedInstance().sendPaymentTo(self.output.venmoId, amount: a, note: "yo", completionHandler: { (transaction, success, error) -> Void in
-                if (success){
-                    NSLog("Transaction succeeded!")
-                }
-                else{
-                    NSLog("Transaction failed with error")
-                    //println(error.localizedDescription)
-                }
-            })
-            
-
-
-        }
-        if (SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook)){
+                if (SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook)){
             let controller = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
             controller.setInitialText("I am using @Split to use split bill")
             controller.completionHandler = {

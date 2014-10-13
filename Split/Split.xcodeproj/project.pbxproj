@@ -45,6 +45,7 @@
 		58FD41FE19D66B5100BFBE35 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD41FD19D66B5100BFBE35 /* SplitTests.swift */; };
 		58FD421B19D66CCA00BFBE35 /* SideBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD421A19D66CCA00BFBE35 /* SideBarTableViewController.swift */; };
 		58FD421C19D66CCA00BFBE35 /* SideBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FD421A19D66CCA00BFBE35 /* SideBarTableViewController.swift */; };
+		6223B2FC19EC78A50022445F /* login.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6223B2FB19EC78A50022445F /* login.jpg */; };
 		62ECC7C119EB4B1C00D8FF20 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62ECC7C019EB4B1C00D8FF20 /* Launch Screen.xib */; };
 		62ECC7C319EB4B9600D8FF20 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62ECC7C219EB4B9600D8FF20 /* Media.xcassets */; };
 		BC25F059021A7DDA2F9FD3A5 /* libPods-Split.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF4AE1192860BA48F1DF7F8 /* libPods-Split.a */; };
@@ -105,6 +106,7 @@
 		58FD421519D66BD600BFBE35 /* Split-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Split-Bridging-Header.h"; sourceTree = "<group>"; };
 		58FD421619D66BD600BFBE35 /* SplitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SplitTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		58FD421A19D66CCA00BFBE35 /* SideBarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarTableViewController.swift; sourceTree = "<group>"; };
+		6223B2FB19EC78A50022445F /* login.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login.jpg; sourceTree = "<group>"; };
 		62ECC7C019EB4B1C00D8FF20 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		62ECC7C219EB4B9600D8FF20 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
 		ECF4AE1192860BA48F1DF7F8 /* libPods-Split.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Split.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +236,7 @@
 		58FD41E519D66B5100BFBE35 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6223B2FB19EC78A50022445F /* login.jpg */,
 				58FD41E619D66B5100BFBE35 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -341,6 +344,7 @@
 				62ECC7C319EB4B9600D8FF20 /* Media.xcassets in Resources */,
 				62ECC7C119EB4B1C00D8FF20 /* Launch Screen.xib in Resources */,
 				58FD41ED19D66B5100BFBE35 /* Main.storyboard in Resources */,
+				6223B2FC19EC78A50022445F /* login.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

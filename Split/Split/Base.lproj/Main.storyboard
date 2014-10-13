@@ -270,7 +270,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="eventDetailCell" rowHeight="181" id="rL1-H7-KtN" customClass="EventDetailTableViewCell" customModule="Split" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="eventDetailCell" rowHeight="202" id="rL1-H7-KtN" customClass="EventDetailTableViewCell" customModule="Split" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rL1-H7-KtN" id="enE-nL-5w2">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -282,7 +282,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5K-fi-6v1">
-                                            <rect key="frame" x="189" y="49" width="51" height="21"/>
+                                            <rect key="frame" x="165" y="48" width="51" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -294,13 +294,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KI2-qq-apO">
-                                            <rect key="frame" x="189" y="96" width="123" height="21"/>
+                                            <rect key="frame" x="165" y="94" width="123" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3E-AD-a6P">
-                                            <rect key="frame" x="237" y="142" width="66" height="30"/>
+                                            <rect key="frame" x="165" y="135" width="66" height="30"/>
                                             <state key="normal" title="Checkout">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -315,7 +315,7 @@
                                     <outlet property="nameLabel" destination="V5K-fi-6v1" id="qCh-7R-T7j"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="entryCell" rowHeight="60" id="H2U-wk-lDn" customClass="EventEntryTableViewCell" customModule="Split" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="entryCell" rowHeight="67" id="H2U-wk-lDn" customClass="EventEntryTableViewCell" customModule="Split" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="233" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H2U-wk-lDn" id="pOY-Pr-CBo">
@@ -432,15 +432,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcn-tB-QrI">
-                                <rect key="frame" x="111" y="308" width="122" height="30"/>
-                                <state key="normal" title="Request Payment">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="requestPaymentButton:" destination="08n-P7-tjR" eventType="touchUpInside" id="adk-nJ-eka"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaT-1h-BT0">
                                 <rect key="frame" x="16" y="237" width="60" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -465,12 +456,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpE-nd-jga">
-                                <rect key="frame" x="142" y="408" width="37" height="30"/>
+                                <rect key="frame" x="16" y="350" width="37" height="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onTrasactionSuccessful:" destination="08n-P7-tjR" eventType="touchUpInside" id="GsA-qG-L4o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcn-tB-QrI">
+                                <rect key="frame" x="16" y="295" width="122" height="30"/>
+                                <state key="normal" title="Request Payment">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="requestPaymentButton:" destination="08n-P7-tjR" eventType="touchUpInside" id="adk-nJ-eka"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -480,6 +480,7 @@
                     <connections>
                         <outlet property="amountField" destination="CEg-wZ-0pF" id="glx-1u-jyF"/>
                         <outlet property="descriptionField" destination="2IQ-6r-LK4" id="tmc-zs-s0s"/>
+                        <outlet property="paymentButton" destination="jcn-tB-QrI" id="Kxt-22-imj"/>
                         <outlet property="venmoIdField" destination="FFo-Cn-v57" id="Ggy-8q-P9r"/>
                     </connections>
                 </viewController>
