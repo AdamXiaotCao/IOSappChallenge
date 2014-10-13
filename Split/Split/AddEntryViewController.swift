@@ -18,7 +18,7 @@ class AddEntryViewController: UIViewController {
     var event: PFObject = PFObject(className: "Entry");
     var participants: [PFObject] = [];
     var individualFields: [UITextField] = [];
-    
+ 
     override func viewDidLoad() {
         
         super.viewDidLoad()
