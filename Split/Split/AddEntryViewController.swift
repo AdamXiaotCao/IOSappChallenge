@@ -20,7 +20,7 @@ class AddEntryViewController: UIViewController {
     var individualFields: [UITextField] = [];
  
     override func viewDidLoad() {
-        
+        println("here is new entry")
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 237/255.0, green: 228/255.0, blue: 217/255.0, alpha: 1)
 

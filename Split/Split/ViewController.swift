@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, SideBarDelegate {
+    var sideBar: SideBar = SideBar()
     let threadLock = NSLock();
     
     @IBOutlet var errorMessage: UILabel!
@@ -17,7 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var registerButton: UIButton!
-    
+    @IBOutlet var firstNameField: UITextField!
+    @IBOutlet var lastNameField: UITextField!
+
     @IBAction func onUsernameModified(sender: AnyObject) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             self.threadLock.lock();
@@ -55,11 +57,21 @@ class ViewController: UIViewController {
         } else if (self.emailField.text == nil) {
             self.errorMessage.text = "email is required";
             return;
+        } else if (self.firstNameField.text == nil) {
+            self.errorMessage.text = "firstname is required"
+            return;
+        } else if (self.lastNameField.text == nil) {
+            self.errorMessage.text = "lastname is required"
+            return;
         }
         var newUser = PFUser();
         newUser.username = self.usernameField.text;
         newUser.password = self.passwordField.text;
         newUser.email = self.emailField.text;
+        newUser.setValue(lastNameField.text, forKey: "lastName")
+        newUser.setValue(firstNameField.text, forKey: "firstName")
+
+        
         newUser.signUpInBackgroundWithBlock {
             (succeeded: Bool!, error: NSError!) -> Void in
             if error == nil {
@@ -70,13 +82,14 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+    func sideBarDidSelectButtonAtIndex(index: Int) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 237/255.0, green: 228/255.0, blue: 217/255.0, alpha: 1)
-
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        sideBar = SideBar(sourceView: self.view, menuItems: ["first item", "second item"])
+        }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

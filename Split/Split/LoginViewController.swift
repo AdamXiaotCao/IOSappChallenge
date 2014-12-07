@@ -8,16 +8,19 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-
+class LoginViewController: UIViewController, SideBarDelegate {
+    var sideBar:SideBar = SideBar()
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
     
+    func sideBarDidSelectButtonAtIndex(index: Int) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "login.jpg"))
         self.view.backgroundColor = UIColor(red: 237/255.0, green: 228/255.0, blue: 217/255.0, alpha: 1)
         // Do any additional setup after loading the view.
+        sideBar = SideBar(sourceView: self.view, menuItems: ["first", "second"])
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,9 +32,6 @@ class LoginViewController: UIViewController {
         var alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
-    }
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        self.view.endEditing(true)
     }
     
     @IBAction func onLogin(sender: UIButton) {

@@ -29,16 +29,71 @@ struct User{
 }
 
 
-class EventTableViewController: UITableViewController, UITableViewDataSource {
-
+class EventTableViewController: UITableViewController, UITableViewDataSource, SideBarDelegate {
+    var sideBar: SideBar = SideBar()
+    func sideBarDidSelectButtonAtIndex(index: Int) {
+        
+    }
+    
+    @IBAction func addFriendButton(sender: AnyObject) {
+        var currentUser = PFUser.currentUser()
+        var alert = UIAlertController(title: "Add Friend", message: "Please enter a username", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "Username"
+            textField.secureTextEntry = false
+            
+            // Add button actions here
+            var addBtnAction = UIAlertAction(title: "Add", style: UIAlertActionStyle.Default) {
+                UIAlertAction in
+                
+                var text : String = textField.text
+                
+                println("I want to add the user: \(text)")
+                
+                var query = PFUser.query()
+                query.whereKey("username", equalTo: text)
+                query.getFirstObjectInBackgroundWithBlock {
+                    (object: PFObject!, error: NSError!) -> Void in
+                    if !(object != nil) {
+                        NSLog("The getFirstObject request failed.")
+                        //add alertView here later
+                        
+                    } else {
+                        // The find succeeded.
+                        NSLog("Successfully retrieved the object.")
+                        //This can find username successfully
+                        var friendsRelation : PFRelation = currentUser.relationForKey("friends")
+                        friendsRelation.addObject(object);
+                        currentUser.save()
+                        
+                    }
+                }
+            }
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+            alert.addAction(addBtnAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        })
+    }
     var events : [AnyObject] = []
     
     
     override func viewDidLoad() {
+        
         self.view.backgroundColor = UIColor(red: 237/255.0, green: 228/255.0, blue: 217/255.0, alpha: 1)
 
         super.viewDidLoad()
-        var user = PFUser.currentUser();
+        var username: String;
+        var email: String;
+        var lastname: String;
+        var firstname: String;
+        
+        var user = PFUser.currentUser()
+        username = user.username
+        email = user.email
+
+        sideBar = SideBar(sourceView: self.view, menuItems: [username, email])
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             var fquery = PFUser.query();
             fquery.whereKey("friends", equalTo: user)

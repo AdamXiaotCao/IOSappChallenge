@@ -26,9 +26,6 @@ class FriendsTableViewController: UITableViewController, UITableViewDataSource {
         self.view.backgroundColor = UIColor(red: 237/255.0, green: 228/255.0, blue: 217/255.0, alpha: 1)
 
         super.viewDidLoad()
-        
-        PFUser.logInWithUsername("harry", password: "123")
-        
         var user = PFUser.currentUser()
         var query = user.relationForKey("friends").query()
         self.friends = query.findObjects() as [PFUser]

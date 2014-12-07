@@ -53,6 +53,7 @@ class EventDetailTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "eventDetailToNewEntry") {
+            println("going to add new entry")
             var addController = segue.destinationViewController as AddEntryViewController;
             addController.participants = self.participants
             addController.event = self.event
