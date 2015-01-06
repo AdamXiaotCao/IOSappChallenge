@@ -31,6 +31,8 @@ struct User{
 
 class EventTableViewController: UITableViewController, UITableViewDataSource, SideBarDelegate {
     var sideBar: SideBar = SideBar()
+    var myRefreshControl = UIRefreshControl()
+    
     func sideBarDidSelectButtonAtIndex(index: Int) {
         
     }
@@ -84,6 +86,11 @@ class EventTableViewController: UITableViewController, UITableViewDataSource, Si
         self.view.backgroundColor = UIColor(red: 237/255.0, green: 228/255.0, blue: 217/255.0, alpha: 1)
 
         super.viewDidLoad()
+        self.refreshControl = myRefreshControl
+        self.myRefreshControl.addTarget(self, action: "didRefreshList", forControlEvents: UIControlEvents.ValueChanged)
+        self.myRefreshControl.backgroundColor = UIColor.grayColor()
+        self.myRefreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(NSDate())")
+
         var username: String;
         var email: String;
         var lastname: String;
@@ -110,6 +117,11 @@ class EventTableViewController: UITableViewController, UITableViewDataSource, Si
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    func didRefreshList() {
+        print("hello")
+        self.updateEvents(PFUser.currentUser())
+        self.myRefreshControl.endRefreshing()
     }
     
     override func viewWillAppear(animated: Bool) {

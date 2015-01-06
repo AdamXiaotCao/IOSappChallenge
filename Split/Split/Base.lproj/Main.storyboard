@@ -4,6 +4,26 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
+        <!--Events-->
+        <scene sceneID="nlU-HB-NgT">
+            <objects>
+                <viewController id="uSq-1L-kqt" customClass="Events" customModule="Split" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zaC-Pv-ATm"/>
+                        <viewControllerLayoutGuide type="bottom" id="FSh-jZ-BtK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4sl-Xm-7k2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="xrR-i6-dWe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mzc-3Q-ytb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="504" y="-564"/>
+        </scene>
         <!--Login-->
         <scene sceneID="w6X-00-1Zu">
             <objects>
@@ -45,6 +65,15 @@
                                 </state>
                                 <connections>
                                     <action selector="onLogin:" destination="IP3-yy-aRQ" eventType="touchUpInside" id="uvN-E1-kP7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lz5-le-buU">
+                                <rect key="frame" x="34" y="286" width="30" height="30"/>
+                                <state key="normal" title="try">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uSq-1L-kqt" kind="push" id="JQo-fn-iqA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -240,11 +269,11 @@
             <objects>
                 <tableViewController id="9jc-wb-QcE" customClass="EventTableViewController" customModule="Split" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" id="1mN-lz-YIs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nZH-SB-UTm">
-                            <rect key="frame" x="-23" y="-15" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="153" width="320" height="39"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Add friend">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -285,6 +314,7 @@
                             <outlet property="delegate" destination="9jc-wb-QcE" id="clA-B7-9rn"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="All Events" id="VgV-kC-4PO">
                         <barButtonItem key="leftBarButtonItem" title="Sync" id="L6q-Zq-pI6">
                             <connections>
